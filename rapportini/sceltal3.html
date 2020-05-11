@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Scelta L3</title>
+        <link rel="stylesheet" href="assets/main.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>      
+            .table{
+                width: 100%;
+                border-collapse: collapse;
+                margin: 30px auto;
+            }
+            .table input{
+                width: 100%;
+            }
+            .small{
+                width: 80% !important;
+                margin: 30px auto;
+            }
+            #container{
+                margin: 10px 0;
+                display: flex;
+                flex: 1;
+            }       
+            .secondascelta td{
+                padding: 3px 10px !important;
+            }
+            .secondascelta>tbody>tr>td:nth-child(1){
+                width: 15%;
+            }
+            .secondascelta>tbody>tr>td:nth-child(2){
+                width: 30%;
+            }
+            .secondascelta>tbody>tr>td:nth-child(3){
+                width: 25%;
+            }
+            .secondascelta>tbody>tr>td:nth-child(4){
+                width: 15%;
+            }
+            @media screen and (max-width: 1440px){
+                #left, #right{
+                    width: 45%;
+                }
+            }
+            @media screen and (max-width: 1000px){
+                #left, #right{
+                    width: 100%;
+                    display: inherit;
+
+                }
+                #container{
+                    display: block;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <br><br>
+        <h1 class="title">RAPPORTINO SCELTA L3</h1>
+        <!--HEADER-->
+        <form method="POST" id="dataForm">
+            <input size="40" name="NOME" placeholder="Inserisci il nome" required>
+            <input name="DATA" type="date" required pattern="\d{4}-\d{2}-\d{2}" placeholder="aaaa-mm-gg">
+            <select name="TURNO" id="turno" required>
+                <option value="M">Mattino</option>
+                <option value="P">Pomeriggio</option>
+                <option value="N">Notte</option>
+            </select>
+            <div id="container">
+                <div id="left">
+                    <!--TABELLA 1-->
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <th>ART.</th>
+                                <td><input type="text" name="art1"></td>
+                                <td><input type="text" name="art2"></td>
+                                <td><input type="text" name="art3"></td>
+                                <td><input type="text" name="art4"></td>
+                                <td><input type="text" name="art5"></td>
+                                <td><input type="text" name="art6"></td>
+                                <td><input type="text" name="art7"></td>
+                            </tr>
+                            <tr>
+                                <th>TONO</th>
+                                <td><input type="text" name="tono1"></td>
+                                <td><input type="text" name="tono2"></td>
+                                <td><input type="text" name="tono3"></td>
+                                <td><input type="text" name="tono4"></td>
+                                <td><input type="text" name="tono5"></td>
+                                <td><input type="text" name="tono6"></td>
+                                <td><input type="text" name="tono7"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!--TABELLA 2-->
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th><h3>PEDANA</h3></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>1</th>
+                                <td><input type="text" name="pedana1_1"></td>
+                                <td><input type="text" name="pedana1_2"></td>
+                                <td><input type="text" name="pedana1_3"></td>
+                                <td><input type="text" name="pedana1_4"></td>
+                                <td><input type="text" name="pedana1_5"></td>
+                                <td><input type="text" name="pedana1_6"></td>
+                                <td><input type="text" name="pedana1_7"></td>
+                            </tr>
+                            <tr>
+                                <th>2</th>
+                                <td><input type="text" name="pedana2_1"></td>
+                                <td><input type="text" name="pedana2_2"></td>
+                                <td><input type="text" name="pedana2_3"></td>
+                                <td><input type="text" name="pedana2_4"></td>
+                                <td><input type="text" name="pedana2_5"></td>
+                                <td><input type="text" name="pedana2_6"></td>
+                                <td><input type="text" name="pedana2_7"></td>
+                            </tr>
+                            <tr>
+                                <th>3</th>
+                                <td><input type="text" name="pedana3_1"></td>
+                                <td><input type="text" name="pedana3_2"></td>
+                                <td><input type="text" name="pedana3_3"></td>
+                                <td><input type="text" name="pedana3_4"></td>
+                                <td><input type="text" name="pedana3_5"></td>
+                                <td><input type="text" name="pedana3_6"></td>
+                                <td><input type="text" name="pedana3_7"></td>
+                            </tr>
+                            <tr>
+                                <th>4</th>
+                                <td><input type="text" name="pedana4_1"></td>
+                                <td><input type="text" name="pedana4_2"></td>
+                                <td><input type="text" name="pedana4_3"></td>
+                                <td><input type="text" name="pedana4_4"></td>
+                                <td><input type="text" name="pedana4_5"></td>
+                                <td><input type="text" name="pedana4_6"></td>
+                                <td><input type="text" name="pedana4_7"></td>
+                            </tr>
+                            <tr>
+                                <th>5</th>
+                                <td><input type="text" name="pedana5_1"></td>
+                                <td><input type="text" name="pedana5_2"></td>
+                                <td><input type="text" name="pedana5_3"></td>
+                                <td><input type="text" name="pedana5_4"></td>
+                                <td><input type="text" name="pedana5_5"></td>
+                                <td><input type="text" name="pedana5_6"></td>
+                                <td><input type="text" name="pedana5_7"></td>
+                            </tr>
+                            <tr>
+                                <th>6</th>
+                                <td><input type="text" name="pedana6_1"></td>
+                                <td><input type="text" name="pedana6_2"></td>
+                                <td><input type="text" name="pedana6_3"></td>
+                                <td><input type="text" name="pedana6_4"></td>
+                                <td><input type="text" name="pedana6_5"></td>
+                                <td><input type="text" name="pedana6_6"></td>
+                                <td><input type="text" name="pedana6_7"></td>
+                            </tr>
+                            <tr>
+                                <th>7</th>
+                                <td><input type="text" name="pedana7_1"></td>
+                                <td><input type="text" name="pedana7_2"></td>
+                                <td><input type="text" name="pedana7_3"></td>
+                                <td><input type="text" name="pedana7_4"></td>
+                                <td><input type="text" name="pedana7_5"></td>
+                                <td><input type="text" name="pedana7_6"></td>
+                                <td><input type="text" name="pedana7_7"></td>
+                            </tr>
+                            <tr>
+                                <th>8</th>
+                                <td><input type="text" name="pedana8_1"></td>
+                                <td><input type="text" name="pedana8_2"></td>
+                                <td><input type="text" name="pedana8_3"></td>
+                                <td><input type="text" name="pedana8_4"></td>
+                                <td><input type="text" name="pedana8_5"></td>
+                                <td><input type="text" name="pedana8_6"></td>
+                                <td><input type="text" name="pedana8_7"></td>
+                            </tr>
+                            <tr>
+                                <th>9</th>
+                                <td><input type="text" name="pedana9_1"></td>
+                                <td><input type="text" name="pedana9_2"></td>
+                                <td><input type="text" name="pedana9_3"></td>
+                                <td><input type="text" name="pedana9_4"></td>
+                                <td><input type="text" name="pedana9_5"></td>
+                                <td><input type="text" name="pedana9_6"></td>
+                                <td><input type="text" name="pedana9_7"></td>
+                            </tr>
+                            <tr>
+                                <th>10</th>
+                                <td><input type="text" name="pedana10_1"></td>
+                                <td><input type="text" name="pedana10_2"></td>
+                                <td><input type="text" name="pedana10_3"></td>
+                                <td><input type="text" name="pedana10_4"></td>
+                                <td><input type="text" name="pedana10_5"></td>
+                                <td><input type="text" name="pedana10_6"></td>
+                                <td><input type="text" name="pedana10_7"></td>
+                            </tr>
+                            <tr>
+                                <th>11</th>
+                                <td><input type="text" name="pedana11_1"></td>
+                                <td><input type="text" name="pedana11_2"></td>
+                                <td><input type="text" name="pedana11_3"></td>
+                                <td><input type="text" name="pedana11_4"></td>
+                                <td><input type="text" name="pedana11_5"></td>
+                                <td><input type="text" name="pedana11_6"></td>
+                                <td><input type="text" name="pedana11_7"></td>
+                            </tr>
+                            <tr>
+                                <th>12</th>
+                                <td><input type="text" name="pedana12_1"></td>
+                                <td><input type="text" name="pedana12_2"></td>
+                                <td><input type="text" name="pedana12_3"></td>
+                                <td><input type="text" name="pedana12_4"></td>
+                                <td><input type="text" name="pedana12_5"></td>
+                                <td><input type="text" name="pedana12_6"></td>
+                                <td><input type="text" name="pedana12_7"></td>
+                            </tr>
+                            <tr>
+                                <th>13</th>
+                                <td><input type="text" name="pedana13_1"></td>
+                                <td><input type="text" name="pedana13_2"></td>
+                                <td><input type="text" name="pedana13_3"></td>
+                                <td><input type="text" name="pedana13_4"></td>
+                                <td><input type="text" name="pedana13_5"></td>
+                                <td><input type="text" name="pedana13_6"></td>
+                                <td><input type="text" name="pedana13_7"></td>
+                            </tr>
+                            <tr>
+                                <th>14</th>
+                                <td><input type="text" name="pedana14_1"></td>
+                                <td><input type="text" name="pedana14_2"></td>
+                                <td><input type="text" name="pedana14_3"></td>
+                                <td><input type="text" name="pedana14_4"></td>
+                                <td><input type="text" name="pedana14_5"></td>
+                                <td><input type="text" name="pedana14_6"></td>
+                                <td><input type="text" name="pedana14_7"></td>
+                            </tr>
+                            <tr>
+                                <th>15</th>
+                                <td><input type="text" name="pedana15_1"></td>
+                                <td><input type="text" name="pedana15_2"></td>
+                                <td><input type="text" name="pedana15_3"></td>
+                                <td><input type="text" name="pedana15_4"></td>
+                                <td><input type="text" name="pedana15_5"></td>
+                                <td><input type="text" name="pedana15_6"></td>
+                                <td><input type="text" name="pedana15_7"></td>
+                            </tr>
+                            <tr>
+                                <th>16</th>
+                                <td><input type="text" name="pedana16_1"></td>
+                                <td><input type="text" name="pedana16_2"></td>
+                                <td><input type="text" name="pedana16_3"></td>
+                                <td><input type="text" name="pedana16_4"></td>
+                                <td><input type="text" name="pedana16_5"></td>
+                                <td><input type="text" name="pedana16_6"></td>
+                                <td><input type="text" name="pedana16_7"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!--TABELLA 3-->
+                    <table class="table small">
+                        <tbody>
+                            <tr>
+                                <th>Pellets Imbanconati</th>
+                                <td><input type="text" name="pellets-imbanconati"></td>
+                            </tr>
+                            <tr>
+                                <th>Pellets Sbanconati</th>
+                                <td><input type="text" name="pellets-sbanconati"></td>
+                            </tr>
+                            <tr>
+                                <th>Benne Scarto</th>
+                                <td><input type="text" name="benne-scarto"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!--TABELLA 4-->
+                    <table class="table small">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th></th>
+                                <th><h3>Motivare</h3></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>Pulizia Scelta</th>
+                                <td><input type="checkbox" name="puliziascelta-check"></td>
+                                <td><input type="text" name="puliziascelta-input" disabled></td>
+                            </tr>
+                            <tr>
+                                <th>Pulizia Paletizzatore</th>
+                                <td><input type="checkbox" name="puliziapaletizzatore-check"></td>
+                                <td><input type="text" name="puliziapaletizzatore-input" disabled></td>
+                            </tr>
+                            <tr>
+                                <th>Pulizia Reparto</th>
+                                <td><input type="checkbox" name="puliziareparto-check"></td>
+                                <td><input type="text" name="puliziareparto-input" disabled></td>
+                            </tr>
+                            <tr>
+                                <th>Pulizie Straordinarie</th>
+                                <td><input type="checkbox" name="puliziestraordinarie-check"></td>
+                                <td><input type="text" name="puliziestraordinarie-input" disabled></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="right">
+                    <h1>SECONDA SCELTA</h1>
+                    <table class="table secondascelta">
+                        <thead>
+                            <th><h3>PEDANA</h3></th>
+                            <th><h3>DIFETTO RISCONTRATO</h3></th>
+                            <th><h3>AVVISATO CHI</h3></th>
+                            <th><h3>ORE</h3></th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><input type="text" name="secondascelta_pedana1"></td>
+                                <td><input type="text" name="secondascelta_difetti1"></td>
+                                <td><input type="text" name="secondascelta_avvisatochi1"></td>
+                                <td><input type="text" name="secondascelta_ora1"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" name="secondascelta_pedana2"></td>
+                                <td><input type="text" name="secondascelta_difetti2"></td>
+                                <td><input type="text" name="secondascelta_avvisatochi2"></td>
+                                <td><input type="text" name="secondascelta_ora2"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" name="secondascelta_pedana3"></td>
+                                <td><input type="text" name="secondascelta_difetti3"></td>
+                                <td><input type="text" name="secondascelta_avvisatochi3"></td>
+                                <td><input type="text" name="secondascelta_ora3"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" name="secondascelta_pedana4"></td>
+                                <td><input type="text" name="secondascelta_difetti4"></td>
+                                <td><input type="text" name="secondascelta_avvisatochi4"></td>
+                                <td><input type="text" name="secondascelta_ora4"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" name="secondascelta_pedana5"></td>
+                                <td><input type="text" name="secondascelta_difetti5"></td>
+                                <td><input type="text" name="secondascelta_avvisatochi5"></td>
+                                <td><input type="text" name="secondascelta_ora5"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" name="secondascelta_pedana6"></td>
+                                <td><input type="text" name="secondascelta_difetti6"></td>
+                                <td><input type="text" name="secondascelta_avvisatochi6"></td>
+                                <td><input type="text" name="secondascelta_ora6"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" name="secondascelta_pedana7"></td>
+                                <td><input type="text" name="secondascelta_difetti7"></td>
+                                <td><input type="text" name="secondascelta_avvisatochi7"></td>
+                                <td><input type="text" name="secondascelta_ora7"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" name="secondascelta_pedana8"></td>
+                                <td><input type="text" name="secondascelta_difetti8"></td>
+                                <td><input type="text" name="secondascelta_avvisatochi8"></td>
+                                <td><input type="text" name="secondascelta_ora8"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" name="secondascelta_pedana9"></td>
+                                <td><input type="text" name="secondascelta_difetti9"></td>
+                                <td><input type="text" name="secondascelta_avvisatochi9"></td>
+                                <td><input type="text" name="secondascelta_ora9"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" name="secondascelta_pedana10"></td>
+                                <td><input type="text" name="secondascelta_difetti10"></td>
+                                <td><input type="text" name="secondascelta_avvisatochi10"></td>
+                                <td><input type="text" name="secondascelta_ora10"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" name="secondascelta_pedana11"></td>
+                                <td><input type="text" name="secondascelta_difetti11"></td>
+                                <td><input type="text" name="secondascelta_avvisatochi11"></td>
+                                <td><input type="text" name="secondascelta_ora11"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" name="secondascelta_pedana12"></td>
+                                <td><input type="text" name="secondascelta_difetti12"></td>
+                                <td><input type="text" name="secondascelta_avvisatochi12"></td>
+                                <td><input type="text" name="secondascelta_ora12"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" name="secondascelta_pedana13"></td>
+                                <td><input type="text" name="secondascelta_difetti13"></td>
+                                <td><input type="text" name="secondascelta_avvisatochi13"></td>
+                                <td><input type="text" name="secondascelta_ora13"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" name="secondascelta_pedana14"></td>
+                                <td><input type="text" name="secondascelta_difetti14"></td>
+                                <td><input type="text" name="secondascelta_avvisatochi14"></td>
+                                <td><input type="text" name="secondascelta_ora14"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" name="secondascelta_pedana15"></td>
+                                <td><input type="text" name="secondascelta_difetti15"></td>
+                                <td><input type="text" name="secondascelta_avvisatochi15"></td>
+                                <td><input type="text" name="secondascelta_ora15"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" name="secondascelta_pedana16"></td>
+                                <td><input type="text" name="secondascelta_difetti16"></td>
+                                <td><input type="text" name="secondascelta_avvisatochi16"></td>
+                                <td><input type="text" name="secondascelta_ora16"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table small">
+                        <tbody>
+                            <tr>
+                                <th rowspan="3">Vuoti al forno</th>
+                                <td>Dalle</td>
+                                <td><input type="time" name="from_time1"></td>
+                                <td>Alle</td>
+                                <td><input type="time" name="to_time1"></td>
+                            </tr>
+                            <tr>
+                                <td>Dalle</td>
+                                <td><input type="time" name="from_time2"></td>
+                                <td>Alle</td>
+                                <td><input type="time" name="to_time2"></td>
+                            </tr>
+                            <tr>
+                                <td>Dalle</td>
+                                <td><input type="time" name="from_time3"></td>
+                                <td>Alle</td>
+                                <td><input type="time" name="to_time3"></td>
+                            </tr>
+                            <tr>
+                                <th>Timbratore BAR-CODE</th>
+                                <td colspan="4"><input type="text" name="timbratore"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h3>Comunicazioni</h3>
+                    <textarea class="small" name="comunicazioni" cols="30" rows="5"></textarea>
+                </div>
+            </div>
+            <input type="hidden" name="reparto" value="sceltal3">
+            <input type="submit" name="save" id="save" value="Salva">
+            <button type="button" name="fine-turno" id="fine-turno" disabled>Fine Turno</button>
+        </form>
+        <script src="assets/script.js"></script>
+        <script>
+            document.querySelectorAll('input[type=checkbox]').forEach(checkbox => {
+                checkbox.addEventListener('change', function(){
+                    var name = this.name.split('-')[0];
+                    if(this.checked){
+                        document.getElementsByName(name+'-input')[0].removeAttribute("disabled");
+                        document.getElementsByName(name+'-input')[0].setAttribute("required", "required");
+                    }else{
+                        document.getElementsByName(name+'-input')[0].setAttribute("disabled", "disabled");
+                        document.getElementsByName(name+'-input')[0].removeAttribute("required");
+                        document.getElementsByName(name+'-input')[0].value = "";
+                    }
+                });
+            })
+            
+            document.addEventListener('DOMContentLoaded', function(){
+                if(localStorage.sceltal3){
+                    var jsonSceltaDati = JSON.parse(localStorage.sceltal3);
+                    var storageKeys = Object.keys(jsonSceltaDati);
+                    for(var k=0; k<storageKeys.length; k++){
+                        //codice per oscurare gli input se non sono selezionate le checkbox
+                        if(document.getElementsByName(storageKeys[k])[0].type=="checkbox"){
+                            var checkbox = document.getElementsByName(storageKeys[k])[0]
+                            var name = checkbox.name.split('-')[0];
+                            checkbox.checked = jsonSceltaDati[storageKeys[k]];
+                            if(checkbox.checked){
+                                document.getElementsByName(name+'-input')[0].removeAttribute("disabled");
+                                document.getElementsByName(name+'-input')[0].setAttribute("required", "required");
+                            }else{
+                                document.getElementsByName(name+'-input')[0].setAttribute("disabled", "disabled");
+                                document.getElementsByName(name+'-input')[0].removeAttribute("required");
+                            }
+                        }else
+                            document.getElementsByName(storageKeys[k])[0].value = jsonSceltaDati[storageKeys[k]];
+                    }
+                }
+            });
+
+            document.getElementById('dataForm').addEventListener('submit', function (event){
+                event.preventDefault();
+                saveToLocalStorage();
+            });
+
+            var btnCheckUnlock = setInterval(function(){
+                if(localStorage.sceltal3) var turno = JSON.parse(localStorage.sceltal3)['TURNO']
+                if(turno){
+                    var date = new Date();
+                    var time = date.getHours() + ":" + date.getMinutes();
+                    var oraSbloccoBtn;
+                    switch(turno){
+                        case 'M':
+                            oraSbloccoBtn = "11:30"
+                            break;
+                        case 'P':
+                            oraSbloccoBtn = "19:30"
+                            break;
+                        case 'N':
+                            oraSbloccoBtn = "3:30"
+                            break
+                        default:
+                    }
+                    if(time >= oraSbloccoBtn){
+                        document.getElementById("fine-turno").removeAttribute("disabled")
+                        document.getElementById("fine-turno").addEventListener("click", function(){
+                            localStorageDataSend('sceltal3');
+                        });
+                        clearInterval(btnCheckUnlock)
+                    }
+                }
+            }, 1000);
+        </script>
+    </body>
+</html>

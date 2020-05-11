@@ -1,0 +1,409 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+   <head>
+      <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+      <title>MULINI</title>
+      <link rel="stylesheet" href="assets/main.css">
+      <style>
+        .table{
+            width: 60%;
+            height: auto;
+            text-align: center;
+            margin: 30px auto;
+            border-collapse: collapse;
+        }
+        .small{
+            width: 45%;
+        }
+        @media screen and (max-width: 1440px){
+            .table{
+                width: 75%;
+            }
+            .small{
+                width: 60%;
+            }
+        }
+      </style>
+   </head>
+   <body>
+      <br><br>
+      <h1 class="title">RAPPORTINO MULINI</h1>
+      <!--HEADER-->
+      <form method="POST" id="dataForm">
+        <input size="40" name="NOME" placeholder="Inserisci il nome" required>
+        <input name="DATA" type="date" required pattern="\d{4}-\d{2}-\d{2}" placeholder="aaaa-mm-gg">
+        <select name="TURNO" id="turno">
+            <option value="M">Mattino</option>
+            <option value="P">Pomeriggio</option>
+            <option value="N">Notte</option>
+        </select>
+        <!--FIRST TABLE-->
+        <table class="table">
+            <thead>
+                <tr>
+                    <th><h2>SILOS</h2></th>
+                    <th colspan="2"><h1>1</h1></th>
+                    <th colspan="2"><h1>2</h1></th>
+                    <th colspan="2"><h1>3</h1></th>
+                    <th colspan="2"><h1>4</h1></th>
+                    <th colspan="2"><h1>5</h1></th>
+                    <th colspan="2"><h1>6</h1></th>
+                    <th colspan="2"><h1>7</h1></th>
+                    <th colspan="2"><h1>7</h1></th>
+                </tr>
+                <tr>
+                    <th>MULINO</th>
+                    <th>1</th>
+                    <th>4</th>
+                    <th>1</th>
+                    <th>4</th>
+                    <th>1</th>
+                    <th>4</th>
+                    <th>1</th>
+                    <th>4</th>
+                    <th>1</th>
+                    <th>4</th>
+                    <th>1</th>
+                    <th>4</th>
+                    <th>1</th>
+                    <th>2</th>
+                    <th>3</th>
+                    <th>4</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td >ORA INIZIO</td>
+                    <td  colspan="2"><input type=time type=time name="ora_inizio_silo1"></td>
+                    <td  colspan="2"><input type=time name="ora-inizio-silo2"></td>
+                    <td  colspan="2"><input type=time name="ora-inizio-silo3"></td>
+                    <td  colspan="2"><input type=time name="ora-inizio-silo4"></td>
+                    <td  colspan="2"><input type=time name="ora-inizio-silo5"></td>
+                    <td  colspan="2"><input type=time name="ora-inizio-silo6"></td>
+                    <td  colspan="2"><input type=time name="ora-inizio-silo7"></td>
+                    <td  colspan="2"><input type=time name="ora-inizio-silo7_2"></td>
+                </tr>
+                <tr>
+                    <td>UMIDITA 1</td>
+                    <td><input onkeypress='validate(event)' name="um_m1_s1"></td>
+                    <td><input onkeypress='validate(event)' name="um_m4_s1"></td>
+                    <td><input onkeypress='validate(event)' name="um_m1_s2"></td>
+                    <td><input onkeypress='validate(event)' name="um_m4_s2"></td>
+                    <td><input onkeypress='validate(event)' name="um_m1_s3"></td>
+                    <td><input onkeypress='validate(event)' name="um_m4_s3"></td>
+                    <td><input onkeypress='validate(event)' name="um_m1_s4"></td>
+                    <td><input onkeypress='validate(event)' name="um_m4_s4"></td>
+                    <td><input onkeypress='validate(event)' name="um_m1_s5"></td>
+                    <td><input onkeypress='validate(event)' name="um_m4_s5"></td>
+                    <td><input onkeypress='validate(event)' name="um_m1_s6"></td>
+                    <td><input onkeypress='validate(event)' name="um_m4_s6"></td>
+                    <td><input onkeypress='validate(event)' name="um_m1_s7"></td>
+                    <td><input onkeypress='validate(event)' name="um_m2_s7"></td>
+                    <td><input onkeypress='validate(event)' name="um_m3_s7"></td>
+                    <td><input onkeypress='validate(event)' name="um_m4_s7"></td>
+                </tr>
+                <tr>
+                    <td>UMIDITA 2</td>
+                    <td><input onkeypress='validate(event)' name="um2_m1_s1"></td>
+                    <td><input onkeypress='validate(event)' name="um2_m4_s1"></td>
+                    <td><input onkeypress='validate(event)' name="um2_m1_s2"></td>
+                    <td><input onkeypress='validate(event)' name="um2_m4_s2"></td>
+                    <td><input onkeypress='validate(event)' name="um2_m1_s3"></td>
+                    <td><input onkeypress='validate(event)' name="um2_m4_s3"></td>
+                    <td><input onkeypress='validate(event)' name="um2_m1_s4"></td>
+                    <td><input onkeypress='validate(event)' name="um2_m4_s4"></td>
+                    <td><input onkeypress='validate(event)' name="um2_m1_s5"></td>
+                    <td><input onkeypress='validate(event)' name="um2_m4_s5"></td>
+                    <td><input onkeypress='validate(event)' name="um2_m1_s6"></td>
+                    <td><input onkeypress='validate(event)' name="um2_m4_s6"></td>
+                    <td><input onkeypress='validate(event)' name="um2_m1_s7"></td>
+                    <td><input onkeypress='validate(event)' name="um2_m2_s7"></td>
+                    <td><input onkeypress='validate(event)' name="um2_m3_s7"></td>
+                    <td><input onkeypress='validate(event)' name="um2_m4_s7"></td>
+                </tr>
+                <tr>
+                    <td>UMIDITA 3</td>
+                    <td><input onkeypress='validate(event)' name="um3_m1_s1"></td>
+                    <td><input onkeypress='validate(event)' name="um3_m4_s1"></td>
+                    <td><input onkeypress='validate(event)' name="um3_m1_s2"></td>
+                    <td><input onkeypress='validate(event)' name="um3_m4_s2"></td>
+                    <td><input onkeypress='validate(event)' name="um3_m1_s3"></td>
+                    <td><input onkeypress='validate(event)' name="um3_m4_s3"></td>
+                    <td><input onkeypress='validate(event)' name="um3_m1_s4"></td>
+                    <td><input onkeypress='validate(event)' name="um3_m4_s4"></td>
+                    <td><input onkeypress='validate(event)' name="um3_m1_s5"></td>
+                    <td><input onkeypress='validate(event)' name="um3_m4_s5"></td>
+                    <td><input onkeypress='validate(event)' name="um3_m1_s6"></td>
+                    <td><input onkeypress='validate(event)' name="um3_m4_s6"></td>
+                    <td><input onkeypress='validate(event)' name="um3_m1_s7"></td>
+                    <td><input onkeypress='validate(event)' name="um3_m2_s7"></td>
+                    <td><input onkeypress='validate(event)' name="um3_m3_s7"></td>
+                    <td><input onkeypress='validate(event)' name="um3_m4_s7"></td>
+                </tr>
+                <tr>
+                    <td>UMIDITA 4</td>
+                    <td><input onkeypress='validate(event)' name="um4_m1_s1"></td>
+                    <td><input onkeypress='validate(event)' name="um4_m4_s1"></td>
+                    <td><input onkeypress='validate(event)' name="um4_m1_s2"></td>
+                    <td><input onkeypress='validate(event)' name="um4_m4_s2"></td>
+                    <td><input onkeypress='validate(event)' name="um4_m1_s3"></td>
+                    <td><input onkeypress='validate(event)' name="um4_m4_s3"></td>
+                    <td><input onkeypress='validate(event)' name="um4_m1_s4"></td>
+                    <td><input onkeypress='validate(event)' name="um4_m4_s4"></td>
+                    <td><input onkeypress='validate(event)' name="um4_m1_s5"></td>
+                    <td><input onkeypress='validate(event)' name="um4_m4_s5"></td>
+                    <td><input onkeypress='validate(event)' name="um4_m1_s6"></td>
+                    <td><input onkeypress='validate(event)' name="um4_m4_s6"></td>
+                    <td><input onkeypress='validate(event)' name="um4_m1_s7"></td>
+                    <td><input onkeypress='validate(event)' name="um4_m2_s7"></td>
+                    <td><input onkeypress='validate(event)' name="um4_m3_s7"></td>
+                    <td><input onkeypress='validate(event)' name="um4_m4_s7"></td>
+                </tr>
+                <tr>
+                    <td>ORA FINE</td>
+                    <td colspan="2"><input type=time name="ora_fine_silo1"></td>
+                    <td colspan="2"><input type=time name="ora_fine_silo2"></td>
+                    <td colspan="2"><input type=time name="ora_fine_silo3"></td>
+                    <td colspan="2"><input type=time name="ora_fine_silo4"></td>
+                    <td colspan="2"><input type=time name="ora_fine_silo5"></td>
+                    <td colspan="2"><input type=time name="ora_fine_silo6"></td>
+                    <td colspan="2"><input type=time name="ora_fine_silo7"></td>
+                    <td colspan="2"><input type=time name="ora_fine_silo7_2"></td>
+                </tr>
+            </tbody>
+        </table>
+        <!--SECOND TABLE-->
+        <table class="table small">
+            <thead>
+                <tr>
+                    <th><h2>SILOS</h2></th>
+                    <th colspan="2"><h1>8</h1></th>
+                    <th colspan="2"><h1>9</h1></th>
+                    <th colspan="2"><h1>10</h1></th>
+                    <th colspan="2"><h1>11</h1></th>
+                    <th colspan="2"><h1>12</h1></th>
+                </tr>
+                <tr>
+                    <th>MULINO</th>
+                    <th>1</th>
+                    <th>4</th>
+                    <th>1</th>
+                    <th>4</th>
+                    <th>1</th>
+                    <th>4</th>
+                    <th>1</th>
+                    <th>4</th>
+                    <th>1</th>
+                    <th>4</th>
+                </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td >ORA INIZIO</td>
+                <td  colspan="2"><input type=time name="ora-inizio-silo8"></td>
+                <td  colspan="2"><input type=time name="ora-inizio-silo9"></td>
+                <td  colspan="2"><input type=time name="ora-inizio-silo10"></td>
+                <td  colspan="2"><input type=time name="ora-inizio-silo11"></td>
+                <td  colspan="2"><input type=time name="ora-inizio-silo12"></td>
+            </tr>
+            <tr>
+                <td>UMIDITA 1</td>
+                <td><input onkeypress='validate(event)' name="um1_m1_s8"></td>
+                <td><input onkeypress='validate(event)' name="um1_m4_s8"></td>
+                <td><input onkeypress='validate(event)' name="um1_m1_s9"></td>
+                <td><input onkeypress='validate(event)' name="um1_m4_s9"></td>
+                <td><input onkeypress='validate(event)' name="um1_m1_s10"></td>
+                <td><input onkeypress='validate(event)' name="um1_m4_s10"></td>
+                <td><input onkeypress='validate(event)' name="um1_m1_s11"></td>
+                <td><input onkeypress='validate(event)' name="um1_m4_s11"></td>
+                <td><input onkeypress='validate(event)' name="um1_m1_s12"></td>
+                <td><input onkeypress='validate(event)' name="um1_m4_s12"></td>
+            </tr>
+            <tr>
+                <td>UMIDITA 2</td>
+                <td><input onkeypress='validate(event)' name="um2_m1_s8"></td>
+                <td><input onkeypress='validate(event)' name="um2_m4_s8"></td>
+                <td><input onkeypress='validate(event)' name="um2_m1_s9"></td>
+                <td><input onkeypress='validate(event)' name="um2_m4_s9"></td>
+                <td><input onkeypress='validate(event)' name="um2_m1_s10"></td>
+                <td><input onkeypress='validate(event)' name="um2_m4_s10"></td>
+                <td><input onkeypress='validate(event)' name="um2_m1_s11"></td>
+                <td><input onkeypress='validate(event)' name="um2_m4_s11"></td>
+                <td><input onkeypress='validate(event)' name="um2_m1_s12"></td>
+                <td><input onkeypress='validate(event)' name="um2_m4_s12"></td>
+            </tr>
+            <tr>
+                <td>UMIDITA 3</td>
+                <td><input onkeypress='validate(event)' name="um3_m1_s8"></td>
+                <td><input onkeypress='validate(event)' name="um3_m4_s8"></td>
+                <td><input onkeypress='validate(event)' name="um3_m1_s9"></td>
+                <td><input onkeypress='validate(event)' name="um3_m4_s9"></td>
+                <td><input onkeypress='validate(event)' name="um3_m1_s10"></td>
+                <td><input onkeypress='validate(event)' name="um3_m4_s10"></td>
+                <td><input onkeypress='validate(event)' name="um3_m1_s11"></td>
+                <td><input onkeypress='validate(event)' name="um3_m4_s11"></td>
+                <td><input onkeypress='validate(event)' name="um3_m1_s12"></td>
+                <td><input onkeypress='validate(event)' name="um3_m4_s12"></td>
+            </tr>
+            <tr>
+                <td>UMIDITA 4</td>
+                <td><input onkeypress='validate(event)' name="um4_m1_s8"></td>
+                <td><input onkeypress='validate(event)' name="um4_m4_s8"></td>
+                <td><input onkeypress='validate(event)' name="um4_m1_s9"></td>
+                <td><input onkeypress='validate(event)' name="um4_m4_s9"></td>
+                <td><input onkeypress='validate(event)' name="um4_m1_s10"></td>
+                <td><input onkeypress='validate(event)' name="um4_m4_s10"></td>
+                <td><input onkeypress='validate(event)' name="um4_m1_s11"></td>
+                <td><input onkeypress='validate(event)' name="um4_m4_s11"></td>
+                <td><input onkeypress='validate(event)' name="um4_m1_s12"></td>
+                <td><input onkeypress='validate(event)' name="um4_m4_s12"></td>
+            </tr>
+            <tr>
+                <td>ORA FINE</td>
+                <td colspan="2"><input type=time name="ora_fine_silo8"></td>
+                <td colspan="2"><input type=time name="ora_fine_silo9"></td>
+                <td colspan="2"><input type=time name="ora_fine_silo10"></td>
+                <td colspan="2"><input type=time name="ora_fine_silo11"></td>
+                <td colspan="2"><input type=time name="ora_fine_silo12"></td>
+            </tr>
+            </tbody>
+        </table>
+        <br>
+        <!--RESIDUO-->
+        <table class="table small">
+            <thead>
+                <tr>
+                    <th colspan="2">MULINO 1</th>
+                    <th colspan="2">MULINO 2</th>
+                    <th colspan="2">MULINO 3</th>
+                    <th colspan="2">MULINO 4</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>RESIDUO gr.</td>
+                    <td>Hz.</td>
+                    <td>RESIDUO gr.</td>
+                    <td>Hz.</td>
+                    <td>RESIDUO gr.</td>
+                    <td>Hz.</td>
+                    <td>RESIDUO gr.</td>
+                    <td>Hz.</td>
+                </tr>
+                <tr>
+                    <td><input name="res1-mul1"></td>
+                    <td><input name="freq1-mul1"></td>
+                    <td><input name="res1-mul2"></td>
+                    <td><input name="freq1-mul2"></td>
+                    <td><input name="res1-mul3"></td>
+                    <td><input name="freq1-mul3"></td>
+                    <td><input name="res1-mul4"></td>
+                    <td><input name="freq1-mul4"></td>
+                </tr>
+                <tr>
+                    <td><input name="res2-mul1"></td>
+                    <td><input name="freq2-mul1"></td>
+                    <td><input name="res2-mul2"></td>
+                    <td><input name="freq2-mul2"></td>
+                    <td><input name="res2-mul3"></td>
+                    <td><input name="freq2-mul3"></td>
+                    <td><input name="res2-mul4"></td>
+                    <td><input name="freq2-mul4"></td>
+                </tr>
+                <tr>
+                    <td><input name="res3-mul1"></td>
+                    <td><input name="freq3-mul1"></td>
+                    <td><input name="res3-mul2"></td>
+                    <td><input name="freq3-mul2"></td>
+                    <td><input name="res3-mul3"></td>
+                    <td><input name="freq3-mul3"></td>
+                    <td><input name="res3-mul4"></td>
+                    <td><input name="freq3-mul4"></td>
+                </tr>
+                <tr>
+                    <td><input name="res4-mul1"></td>
+                    <td><input name="freq4-mul1"></td>
+                    <td><input name="res4-mul2"></td>
+                    <td><input name="freq4-mul2"></td>
+                    <td><input name="res4-mul3"></td>
+                    <td><input name="freq4-mul3"></td>
+                    <td><input name="res4-mul4"></td>
+                    <td><input name="freq4-mul4"></td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <!--OSSERVAZIONI-->
+        <table class="table small">
+            <tbody>
+                <tr>
+                    <td>PROBLEMI MACCHINE</td>
+                    <td><textarea wrap="hard" cols="60" rows="2" name="mach_prob"></textarea></td>
+                </tr>
+                <tr>
+                    <td>OSSERVAZIONI FINE TURNO</td>
+                    <td><textarea wrap="hard" cols="60" rows="2" name="oss_turn"></textarea></td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <br>
+        <input type="hidden" name="reparto" value="mulini">
+        <input type="submit" name="save" id="save" value="Salva">
+        <button type="button" name="fine-turno" id="fine-turno" disabled>Fine Turno</button>
+      </form>
+      <script src="assets/script.js"></script>
+      <script type="text/javascript">
+        //global vars
+        var localStorageData = {};
+        
+        document.addEventListener('DOMContentLoaded', function(){
+            if(localStorage.mulini){
+                var jsonMuliniDati = JSON.parse(localStorage.mulini);
+                var storageKeys = Object.keys(jsonMuliniDati);
+                for(var k=0; k<storageKeys.length; k++){
+                    document.getElementsByName(storageKeys[k])[0].value = jsonMuliniDati[storageKeys[k]];
+                }
+            }
+        });
+
+        document.getElementById('dataForm').addEventListener('submit', function (event){
+            event.preventDefault();
+            saveToLocalStorage();
+        });
+
+
+         //l'ora viene visualizzata nel formato 24h.
+
+         //upload dati tramite click button
+        var btnCheckUnlock = setInterval(function(){
+            if(localStorage.mulini) var turno = JSON.parse(localStorage.mulini)['TURNO']
+            if(turno){
+                var date = new Date();
+                var time = date.getHours() + ":" + date.getMinutes();
+                var oraSbloccoBtn;
+                switch(turno){
+                    case 'M':
+                        oraSbloccoBtn = "11:30"
+                        break;
+                    case 'P':
+                        oraSbloccoBtn = "19:30"
+                        break;
+                    case 'N':
+                        oraSbloccoBtn = "3:30"
+                        break
+                    default:
+                }
+               
+               if(time >= oraSbloccoBtn){
+                    document.getElementById("fine-turno").removeAttribute("disabled")
+                    document.getElementById("fine-turno").addEventListener("click", function(){
+                        localStorageDataSend('mulini');
+                    });
+                    clearInterval(btnCheckUnlock)
+                }
+            }
+        }, 1000);
+      </script>
+   </body>
+</html>
