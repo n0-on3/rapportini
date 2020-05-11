@@ -466,8 +466,9 @@
         </form>
         <script src="assets/script.js"></script>
         <script>
-            document.querySelectorAll('input[type=checkbox]').forEach(checkbox => {
-                checkbox.addEventListener('change', function(){
+            var checkboxes = document.querySelectorAll('input[type=checkbox]');
+            for(var j=0; j<checkboxes.length;j++){
+                checkboxes[j].addEventListener('change', function(){
                     var name = this.name.split('-')[0];
                     if(this.checked){
                         document.getElementsByName(name+'-input')[0].removeAttribute("disabled");
@@ -478,7 +479,7 @@
                         document.getElementsByName(name+'-input')[0].value = "";
                     }
                 });
-            })
+            }
             
             document.addEventListener('DOMContentLoaded', function(){
                 if(localStorage.sceltal2){
