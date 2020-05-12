@@ -37,7 +37,7 @@ function localStorageDataSend(localKey){
         }else{
             alert("Devi inserire il nome, la data e il turno");
         } 
-    }, 1000)
+    }, 700)
 }
 
 function checkDatabase(data, turno, reparto){

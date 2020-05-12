@@ -401,6 +401,8 @@
                         localStorageDataSend('mulini');
                     });
                     clearInterval(btnCheckUnlock)
+                }else{
+                    document.getElementById("fine-turno").setAttribute("disabled", "disabled")
                 }
             }
         }, 1000);
