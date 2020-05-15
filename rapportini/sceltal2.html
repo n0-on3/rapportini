@@ -300,7 +300,7 @@
                         <thead>
                             <tr>
                                 <th></th>
-                                <th></th>
+                                <th>SI/NO</th>
                                 <th><h3>Motivare</h3></th>
                             </tr>
                         </thead>
@@ -308,22 +308,22 @@
                             <tr>
                                 <th>Pulizia Scelta</th>
                                 <td><input type="checkbox" name="puliziascelta-check"></td>
-                                <td><input type="text" name="puliziascelta-input" disabled></td>
+                                <td><input type="text" name="puliziascelta-input" required></td>
                             </tr>
                             <tr>
                                 <th>Pulizia Paletizzatore</th>
                                 <td><input type="checkbox" name="puliziapaletizzatore-check"></td>
-                                <td><input type="text" name="puliziapaletizzatore-input" disabled></td>
+                                <td><input type="text" name="puliziapaletizzatore-input" required></td>
                             </tr>
                             <tr>
                                 <th>Pulizia Reparto</th>
                                 <td><input type="checkbox" name="puliziareparto-check"></td>
-                                <td><input type="text" name="puliziareparto-input" disabled></td>
+                                <td><input type="text" name="puliziareparto-input" required></td>
                             </tr>
                             <tr>
                                 <th>Pulizie Straordinarie</th>
                                 <td><input type="checkbox" name="puliziestraordinarie-check"></td>
-                                <td><input type="text" name="puliziestraordinarie-input" disabled></td>
+                                <td><input type="text" name="puliziestraordinarie-input" required></td>
                             </tr>
                         </tbody>
                     </table>
@@ -491,16 +491,16 @@
         <script src="assets/script.js"></script>
         <script>
             var checkboxes = document.querySelectorAll('input[type=checkbox]');
-            for(var j=0; j<checkboxes.length;j++){
-                checkboxes[j].addEventListener('change', function(){
+            for (var j = 0; j < checkboxes.length; j++) {
+                checkboxes[j].addEventListener('change', function () {
                     var name = this.name.split('-')[0];
-                    if(this.checked){
-                        document.getElementsByName(name+'-input')[0].removeAttribute("disabled");
-                        document.getElementsByName(name+'-input')[0].setAttribute("required", "required");
-                    }else{
-                        document.getElementsByName(name+'-input')[0].setAttribute("disabled", "disabled");
-                        document.getElementsByName(name+'-input')[0].removeAttribute("required");
-                        document.getElementsByName(name+'-input')[0].value = "";
+                    if (this.checked) {
+                        document.getElementsByName(name + '-input')[0].setAttribute("disabled", "disabled");
+                        document.getElementsByName(name + '-input')[0].removeAttribute("required");
+                        document.getElementsByName(name + '-input')[0].value = "";
+                    } else {
+                        document.getElementsByName(name + '-input')[0].setAttribute("required", "required");
+                        document.getElementsByName(name + '-input')[0].removeAttribute("disabled");
                     }
                 });
             }
