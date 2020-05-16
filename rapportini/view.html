@@ -79,18 +79,26 @@
             #scelta .secondascelta td{
                 padding: 3px 10px !important;
             }
-            #scelta .secondascelta>tbody>tr>td:nth-child(1){
+            .secondascelta>tbody>tr>td:nth-child(1) {
+                width: 10%;
+            }
+
+            .secondascelta>tbody>tr>td:nth-child(2) {
                 width: 15%;
             }
-            #scelta .secondascelta>tbody>tr>td:nth-child(2){
+
+            .secondascelta>tbody>tr>td:nth-child(3) {
                 width: 30%;
             }
-            #scelta .secondascelta>tbody>tr>td:nth-child(3){
-                width: 25%;
+
+            .secondascelta>tbody>tr>td:nth-child(4) {
+                width: 20%;
             }
-            #scelta .secondascelta>tbody>tr>td:nth-child(4){
-                width: 15%;
+
+            .secondascelta>tbody>tr>td:nth-child(5) {
+                width: 10%;
             }
+
             #doppia #container{
                 margin: 0 auto;
                 width: 50%;
@@ -698,30 +706,30 @@
                                 <thead>
                                     <tr>
                                         <th></th>
-                                        <th></th>
+                                        <th>SI/NO</th>
                                         <th><h3>Motivare</h3></th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
                                         <th>Pulizia Scelta</th>
-                                        <td><input type="checkbox" name="puliziascelta-check" disabled onclick="return false;"></td>
-                                        <td><input type="text" name="puliziascelta-input" disabled readonly></td>
+                                        <td><input type="checkbox" name="puliziascelta-check" onclick="return false;"></td>
+                                        <td><input type="text" name="puliziascelta-input" required readonly></td>
                                     </tr>
                                     <tr>
                                         <th>Pulizia Paletizzatore</th>
-                                        <td><input type="checkbox" name="puliziapaletizzatore-check" disabled onclick="return false;"></td>
-                                        <td><input type="text" name="puliziapaletizzatore-input" disabled readonly></td>
+                                        <td><input type="checkbox" name="puliziapaletizzatore-check" onclick="return false;"></td>
+                                        <td><input type="text" name="puliziapaletizzatore-input" required readonly></td>
                                     </tr>
                                     <tr>
                                         <th>Pulizia Reparto</th>
-                                        <td><input type="checkbox" name="puliziareparto-check" disabled onclick="return false;"></td>
-                                        <td><input type="text" name="puliziareparto-input" disabled readonly></td>
+                                        <td><input type="checkbox" name="puliziareparto-check" onclick="return false;"></td>
+                                        <td><input type="text" name="puliziareparto-input" required readonly></td>
                                     </tr>
                                     <tr>
                                         <th>Pulizie Straordinarie</th>
-                                        <td><input type="checkbox" name="puliziestraordinarie-check" disabled onclick="return false;"></td>
-                                        <td><input type="text" name="puliziestraordinarie-input" disabled readonly></td>
+                                        <td><input type="checkbox" name="puliziestraordinarie-check" onclick="return false;"></td>
+                                        <td><input type="text" name="puliziestraordinarie-input" required readonly></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -730,6 +738,7 @@
                             <h1>SECONDA SCELTA</h1>
                             <table class="table secondascelta">
                                 <thead>
+                                    <th><h3>ART.</h3></th>
                                     <th><h3>PEDANA</h3></th>
                                     <th><h3>DIFETTO RISCONTRATO</h3></th>
                                     <th><h3>AVVISATO CHI</h3></th>
@@ -737,96 +746,112 @@
                                 </thead>
                                 <tbody>
                                     <tr>
+                                        <td><input type="text" name="secondascelta_art1" readonly></td>
                                         <td><input type="text" name="secondascelta_pedana1" readonly></td>
                                         <td><input type="text" name="secondascelta_difetti1" readonly></td>
                                         <td><input type="text" name="secondascelta_avvisatochi1" readonly></td>
                                         <td><input type="text" name="secondascelta_ora1" readonly></td>
                                     </tr>
                                     <tr>
+                                        <td><input type="text" name="secondascelta_art2" readonly></td>
                                         <td><input type="text" name="secondascelta_pedana2" readonly></td>
                                         <td><input type="text" name="secondascelta_difetti2" readonly></td>
                                         <td><input type="text" name="secondascelta_avvisatochi2" readonly></td>
                                         <td><input type="text" name="secondascelta_ora2" readonly></td>
                                     </tr>
                                     <tr>
+                                        <td><input type="text" name="secondascelta_art3" readonly></td>
                                         <td><input type="text" name="secondascelta_pedana3" readonly></td>
                                         <td><input type="text" name="secondascelta_difetti3" readonly></td>
                                         <td><input type="text" name="secondascelta_avvisatochi3" readonly></td>
                                         <td><input type="text" name="secondascelta_ora3" readonly></td>
                                     </tr>
                                     <tr>
+                                        <td><input type="text" name="secondascelta_art4" readonly></td>
                                         <td><input type="text" name="secondascelta_pedana4" readonly></td>
                                         <td><input type="text" name="secondascelta_difetti4" readonly></td>
                                         <td><input type="text" name="secondascelta_avvisatochi4" readonly></td>
                                         <td><input type="text" name="secondascelta_ora4" readonly></td>
                                     </tr>
                                     <tr>
+                                        <td><input type="text" name="secondascelta_art5" readonly></td>
                                         <td><input type="text" name="secondascelta_pedana5" readonly></td>
                                         <td><input type="text" name="secondascelta_difetti5" readonly></td>
                                         <td><input type="text" name="secondascelta_avvisatochi5" readonly></td>
                                         <td><input type="text" name="secondascelta_ora5" readonly></td>
                                     </tr>
                                     <tr>
+                                        <td><input type="text" name="secondascelta_art6" readonly></td>
                                         <td><input type="text" name="secondascelta_pedana6" readonly></td>
                                         <td><input type="text" name="secondascelta_difetti6" readonly></td>
                                         <td><input type="text" name="secondascelta_avvisatochi6" readonly></td>
                                         <td><input type="text" name="secondascelta_ora6" readonly></td>
                                     </tr>
                                     <tr>
+                                        <td><input type="text" name="secondascelta_art7" readonly></td>
                                         <td><input type="text" name="secondascelta_pedana7" readonly></td>
                                         <td><input type="text" name="secondascelta_difetti7" readonly></td>
                                         <td><input type="text" name="secondascelta_avvisatochi7" readonly></td>
                                         <td><input type="text" name="secondascelta_ora7" readonly></td>
                                     </tr>
                                     <tr>
+                                        <td><input type="text" name="secondascelta_art8" readonly></td>
                                         <td><input type="text" name="secondascelta_pedana8" readonly></td>
                                         <td><input type="text" name="secondascelta_difetti8" readonly></td>
                                         <td><input type="text" name="secondascelta_avvisatochi8" readonly></td>
                                         <td><input type="text" name="secondascelta_ora8" readonly></td>
                                     </tr>
                                     <tr>
+                                        <td><input type="text" name="secondascelta_art9" readonly></td>
                                         <td><input type="text" name="secondascelta_pedana9" readonly></td>
                                         <td><input type="text" name="secondascelta_difetti9" readonly></td>
                                         <td><input type="text" name="secondascelta_avvisatochi9" readonly></td>
                                         <td><input type="text" name="secondascelta_ora9" readonly></td>
                                     </tr>
                                     <tr>
+                                        <td><input type="text" name="secondascelta_art10" readonly></td>
                                         <td><input type="text" name="secondascelta_pedana10" readonly></td>
                                         <td><input type="text" name="secondascelta_difetti10" readonly></td>
                                         <td><input type="text" name="secondascelta_avvisatochi10" readonly></td>
                                         <td><input type="text" name="secondascelta_ora10" readonly></td>
                                     </tr>
                                     <tr>
+                                        <td><input type="text" name="secondascelta_art11" readonly></td>
                                         <td><input type="text" name="secondascelta_pedana11" readonly></td>
                                         <td><input type="text" name="secondascelta_difetti11" readonly></td>
                                         <td><input type="text" name="secondascelta_avvisatochi11" readonly></td>
                                         <td><input type="text" name="secondascelta_ora11" readonly></td>
                                     </tr>
                                     <tr>
+                                        <td><input type="text" name="secondascelta_art12" readonly></td>
                                         <td><input type="text" name="secondascelta_pedana12" readonly></td>
                                         <td><input type="text" name="secondascelta_difetti12" readonly></td>
                                         <td><input type="text" name="secondascelta_avvisatochi12" readonly></td>
                                         <td><input type="text" name="secondascelta_ora12" readonly></td>
                                     </tr>
                                     <tr>
+                                        <td><input type="text" name="secondascelta_art13" readonly></td>
                                         <td><input type="text" name="secondascelta_pedana13" readonly></td>
                                         <td><input type="text" name="secondascelta_difetti13" readonly></td>
                                         <td><input type="text" name="secondascelta_avvisatochi13" readonly></td>
                                         <td><input type="text" name="secondascelta_ora13" readonly></td>
                                     </tr>
                                     <tr>
+                                        <td><input type="text" name="secondascelta_art14" readonly></td>
                                         <td><input type="text" name="secondascelta_pedana14" readonly></td>
                                         <td><input type="text" name="secondascelta_difetti14" readonly></td>
                                         <td><input type="text" name="secondascelta_avvisatochi14" readonly></td>
                                         <td><input type="text" name="secondascelta_ora14" readonly></td>
                                     </tr>
                                     <tr>
+                                        <td><input type="text" name="secondascelta_art15" readonly></td>
                                         <td><input type="text" name="secondascelta_pedana15" readonly></td>
                                         <td><input type="text" name="secondascelta_difetti15" readonly></td>
                                         <td><input type="text" name="secondascelta_avvisatochi15" readonly></td>
                                         <td><input type="text" name="secondascelta_ora15" readonly></td>
                                     </tr>
                                     <tr>
+                                        <td><input type="text" name="secondascelta_art16" readonly></td>
                                         <td><input type="text" name="secondascelta_pedana16" readonly></td>
                                         <td><input type="text" name="secondascelta_difetti16" readonly></td>
                                         <td><input type="text" name="secondascelta_avvisatochi16" readonly></td>

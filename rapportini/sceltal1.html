@@ -553,21 +553,21 @@
             if (localStorage.sceltal1) var turno = JSON.parse(localStorage.sceltal1)['TURNO']
             if (turno) {
                 var date = new Date();
-                var time = date.getHours() + ":" + date.getMinutes();
+                var timeHour = date.getHours();
                 var oraSbloccoBtn;
                 switch (turno) {
                     case 'M':
-                        oraSbloccoBtn = "11:30"
+                        oraSbloccoBtn = 11
                         break;
                     case 'P':
-                        oraSbloccoBtn = "19:30"
+                        oraSbloccoBtn = 19
                         break;
                     case 'N':
-                        oraSbloccoBtn = "3:30"
+                        oraSbloccoBtn = 3
                         break
                     default:
                 }
-                if (time >= oraSbloccoBtn) {
+                if (timeHour >= oraSbloccoBtn) {
                     document.getElementById("fine-turno").removeAttribute("disabled")
                     document.getElementById("fine-turno").addEventListener("click", function () {
                         localStorageDataSend('sceltal1');
