@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Presse</title>
+    <link rel="stylesheet" href="assets/main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .table {
+            width: 60%;
+            border-collapse: collapse;
+            margin: 30px auto;
+        }
+
+        .table input {
+            width: 100%;
+        }
+
+        .small {
+            width: 40% !important;
+            margin: 30px auto;
+        }
+        #container{
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <br><br>
+    <h1 class="title">RAPPORTINO PRESSE</h1>
+    <!--HEADER-->
+    <form method="POST" id="dataForm">
+        <input size="40" name="NOME" placeholder="Inserisci il nome" required>
+        <input name="DATA" type="date" required pattern="\d{4}-\d{2}-\d{2}" placeholder="aaaa-mm-gg">
+        <select name="TURNO" id="turno" required>
+            <option value="M">Mattino</option>
+            <option value="P">Pomeriggio</option>
+            <option value="N">Notte</option>
+        </select>
+        <div id="container">
+            <table class="table">
+                <thead>
+                    <th></th>
+                    <th>Porcellanato</th>
+                    <th>PH2000 EX 30</th>
+                    <th>PH2090 33 N</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>SPESSORE mm.</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>PULIZIA STAMPO ORE</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>PULIZIA GRIGLIA</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>2° PULIZIA STAMPO</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>2° PULIZIA GRIGLIA</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>CONTROLLO SOFFIETTO ORE</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>CONTROLLO CAVI RISCALDATI</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>SETACCINO SCARICA</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>CONTROLLO RETE SETACCI</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>VUOTATO TRAMOGGINO</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>CAMBIO MARCHE</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>CAMBIO TAMPONI</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>SECONDA PRESSATA bar</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>Temp. Bruciatore 1 BT11</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>Temp. Bruciatore 2 BT13</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>Temp. STABILIZZ. BT12</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>Hz INVERTER CAMINO</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>UMIDITA' RESIDUA</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <input type="hidden" name="reparto" value="presse">
+        <input type="submit" name="save" id="save" value="Salva">
+        <button type="button" name="fine-turno" id="fine-turno" disabled>Fine Turno</button>
+    </form>
+    <script src="assets/script.js"></script>
+    <script>
+        var checkboxes = document.querySelectorAll('input[type=checkbox]');
+        for (var j = 0; j < checkboxes.length; j++) {
+            checkboxes[j].addEventListener('change', function () {
+                var name = this.name.split('-')[0];
+                if (this.checked) {
+                    document.getElementsByName(name + '-input')[0].setAttribute("disabled", "disabled");
+                    document.getElementsByName(name + '-input')[0].removeAttribute("required");
+                    document.getElementsByName(name + '-input')[0].value = "";
+                } else {
+                    document.getElementsByName(name + '-input')[0].setAttribute("required", "required");
+                    document.getElementsByName(name + '-input')[0].removeAttribute("disabled");
+                }
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            if (localStorage.sceltal1) {
+                var jsonSceltaDati = JSON.parse(localStorage.sceltal1);
+                var storageKeys = Object.keys(jsonSceltaDati);
+                for (var k = 0; k < storageKeys.length; k++) {
+                    //codice per oscurare gli input se non sono selezionate le checkbox
+                    if (document.getElementsByName(storageKeys[k])[0].type == "checkbox") {
+                        var checkbox = document.getElementsByName(storageKeys[k])[0]
+                        var name = checkbox.name.split('-')[0];
+                        checkbox.checked = jsonSceltaDati[storageKeys[k]];
+                        if (checkbox.checked) {
+                            document.getElementsByName(name + '-input')[0].removeAttribute("disabled");
+                            document.getElementsByName(name + '-input')[0].setAttribute("required", "required");
+                        } else {
+                            document.getElementsByName(name + '-input')[0].setAttribute("disabled", "disabled");
+                            document.getElementsByName(name + '-input')[0].removeAttribute("required");
+                        }
+                    } else
+                        document.getElementsByName(storageKeys[k])[0].value = jsonSceltaDati[storageKeys[k]];
+                }
+            }
+        });
+
+        document.getElementById('dataForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            saveToLocalStorage();
+        });
+
+        var btnCheckUnlock = setInterval(function () {
+            if (localStorage.sceltal1) var turno = JSON.parse(localStorage.sceltal1)['TURNO']
+            if (turno) {
+                var date = new Date();
+                var timeHour = date.getHours();
+                var oraSbloccoBtn;
+                switch (turno) {
+                    case 'M':
+                        oraSbloccoBtn = 11
+                        break;
+                    case 'P':
+                        oraSbloccoBtn = 19
+                        break;
+                    case 'N':
+                        oraSbloccoBtn = 3
+                        break
+                    default:
+                }
+                if (timeHour >= oraSbloccoBtn) {
+                    document.getElementById("fine-turno").removeAttribute("disabled")
+                    document.getElementById("fine-turno").addEventListener("click", function () {
+                        localStorageDataSend('presse');//cambia per diversi rapportini
+                    });
+                    clearInterval(btnCheckUnlock)
+                }
+            }
+        }, 1000);
+    </script>
+</body>
+
+</html>
