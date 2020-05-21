@@ -22,6 +22,9 @@
             case 'singola':
                 $fetchSQL = "SELECT * FROM singola WHERE data = :date ORDER BY FIELD(turno, 'M', 'P', 'N') LIMIT 3";
                 break;
+            case 'presse':
+                $fetchSQL = "SELECT * FROM presse WHERE data = :date ORDER BY FIELD(turno, 'M', 'P', 'N') LIMIT 3";
+                break;
             default:
                 http_response_code(404);
                 die();

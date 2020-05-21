@@ -30,6 +30,9 @@
             case 'singola':
                 $insertIntoDB = "INSERT INTO singola (nome,data,turno,dati) VALUES (:nome,:data,:turno,:dati)";
                 break;
+            case 'presse':
+                $insertIntoDB = "INSERT INTO presse (nome,data,turno,dati) VALUES (:nome,:data,:turno,:dati)";
+                break;
             default:
                 http_response_code(404);
                 die();

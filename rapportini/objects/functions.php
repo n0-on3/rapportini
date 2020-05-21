@@ -33,6 +33,9 @@ function checkIfExistsInDB($data){
         case 'singola':
             $fetchSQL = "SELECT * FROM singola WHERE data = :date AND turno = :turno LIMIT 1";
             break;
+        case 'presse':
+            $fetchSQL = "SELECT * FROM presse WHERE data = :date AND turno = :turno LIMIT 1";
+            break;
         default:
             http_response_code(404);
             die();

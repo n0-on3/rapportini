@@ -24,6 +24,21 @@
         #container{
             text-align: center;
         }
+        #center-container{
+            width: 60%;
+            margin: 0 auto;
+            display: flex;
+            flex: 1;
+        }
+        #left, #right{
+            width: 40%;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+        }
+        #right .table, #left .table{
+            width: 100%;
+        }
     </style>
 </head>
 
@@ -43,121 +58,312 @@
             <table class="table">
                 <thead>
                     <th></th>
-                    <th>Porcellanato</th>
-                    <th>PH2000 EX 30</th>
-                    <th>PH2090 33 N</th>
+                    <th colspan="2">Porcellanato</th>
+                    <th colspan="2">PH2000 EX 30</th>
+                    <th colspan="2">PH2090 33 N</th>
                 </thead>
                 <tbody>
                     <tr>
                         <th>SPESSORE mm.</th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td colspan="2"><input type="text"></td>
+                        <td colspan="2"><input type="text"></td>
+                        <td colspan="2"><input type="text"></td>
                     </tr>
                     <tr>
                         <th>PULIZIA STAMPO ORE</th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td><input type="checkbox" name=""></td>
+                        <td><input type="text"></td>
+                        <td><input type="checkbox" name=""></td>
+                        <td><input type="text"></td>
+                        <td><input type="checkbox" name=""></td>
+                        <td><input type="text"></td>
                     </tr>
                     <tr>
                         <th>PULIZIA GRIGLIA</th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td><input type="checkbox" name=""></td>
+                        <td><input type="text"></td>
+                        <td><input type="checkbox" name=""></td>
+                        <td><input type="text"></td>
+                        <td><input type="checkbox" name=""></td>
+                        <td><input type="text"></td>
                     </tr>
                     <tr>
                         <th>2° PULIZIA STAMPO</th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td><input type="checkbox" name=""></td>
+                        <td><input type="text"></td>
+                        <td><input type="checkbox" name=""></td>
+                        <td><input type="text"></td>
+                        <td><input type="checkbox" name=""></td>
+                        <td><input type="text"></td>
                     </tr>
                     <tr>
                         <th>2° PULIZIA GRIGLIA</th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td><input type="checkbox" name=""></td>
+                        <td><input type="text"></td>
+                        <td><input type="checkbox" name=""></td>
+                        <td><input type="text"></td>
+                        <td><input type="checkbox" name=""></td>
+                        <td><input type="text"></td>
                     </tr>
                     <tr>
                         <th>CONTROLLO SOFFIETTO ORE</th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td><input type="checkbox" name=""></td>
+                        <td><input type="text"></td>
+                        <td><input type="checkbox" name=""></td>
+                        <td><input type="text"></td>
+                        <td><input type="checkbox" name=""></td>
+                        <td><input type="text"></td>
                     </tr>
                     <tr>
                         <th>CONTROLLO CAVI RISCALDATI</th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td><input type="checkbox" name=""></td>
+                        <td><input type="text"></td>
+                        <td><input type="checkbox" name=""></td>
+                        <td><input type="text"></td>
+                        <td><input type="checkbox" name=""></td>
+                        <td><input type="text"></td>
                     </tr>
                     <tr>
                         <th>SETACCINO SCARICA</th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td><input type="checkbox" name=""></td>
+                        <td><input type="text"></td>
+                        <td><input type="checkbox" name=""></td>
+                        <td><input type="text"></td>
+                        <td><input type="checkbox" name=""></td>
+                        <td><input type="text"></td>
                     </tr>
                     <tr>
                         <th>CONTROLLO RETE SETACCI</th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td><input type="checkbox" name=""></td>
+                        <td><input type="text"></td>
+                        <td><input type="checkbox" name=""></td>
+                        <td><input type="text"></td>
+                        <td><input type="checkbox" name=""></td>
+                        <td><input type="text"></td>
                     </tr>
                     <tr>
                         <th>VUOTATO TRAMOGGINO</th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td><input type="checkbox" name=""></td>
+                        <td><input type="text"></td>
+                        <td><input type="checkbox" name=""></td>
+                        <td><input type="text"></td>
+                        <td><input type="checkbox" name=""></td>
+                        <td><input type="text"></td>
                     </tr>
                     <tr>
                         <th>CAMBIO MARCHE</th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td><input type="checkbox" name=""></td>
+                        <td><input type="text"></td>
+                        <td><input type="checkbox" name=""></td>
+                        <td><input type="text"></td>
+                        <td><input type="checkbox" name=""></td>
+                        <td><input type="text"></td>
                     </tr>
                     <tr>
                         <th>CAMBIO TAMPONI</th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td><input type="checkbox" name=""></td>
+                        <td><input type="text"></td>
+                        <td><input type="checkbox" name=""></td>
+                        <td><input type="text"></td>
+                        <td><input type="checkbox" name=""></td>
+                        <td><input type="text"></td>
                     </tr>
                     <tr>
                         <th>SECONDA PRESSATA bar</th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td colspan="2"><input type="text"></td>
+                        <td colspan="2"><input type="text"></td>
+                        <td colspan="2"><input type="text"></td>
                     </tr>
                     <tr>
                         <th>Temp. Bruciatore 1 BT11</th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td colspan="2"><input type="text"></td>
+                        <td colspan="2"><input type="text"></td>
+                        <td colspan="2"><input type="text"></td>
                     </tr>
                     <tr>
                         <th>Temp. Bruciatore 2 BT13</th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td colspan="2"><input type="text"></td>
+                        <td colspan="2"><input type="text"></td>
+                        <td colspan="2"><input type="text"></td>
                     </tr>
                     <tr>
                         <th>Temp. STABILIZZ. BT12</th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td colspan="2"><input type="text"></td>
+                        <td colspan="2"><input type="text"></td>
+                        <td colspan="2"><input type="text"></td>
                     </tr>
                     <tr>
                         <th>Hz INVERTER CAMINO</th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td colspan="2"><input type="text"></td>
+                        <td colspan="2"><input type="text"></td>
+                        <td colspan="2"><input type="text"></td>
                     </tr>
                     <tr>
                         <th>UMIDITA' RESIDUA</th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td colspan="2"><input type="text"></td>
+                        <td colspan="2"><input type="text"></td>
+                        <td colspan="2"><input type="text"></td>
                     </tr>
                 </tbody>
             </table>
+            <div id="center-container">
+                <div id="right">
+                    <table class="table">
+                        <tr>
+                            <th>PULIZIE REPARTO</th>
+                            <td><input type="checkbox" name=""></td>
+                            <td><input type="text" name=""></td>
+                        </tr>
+                        <tr>
+                            <th>LAVORI SETTIMANALI</th>
+                            <td><input type="checkbox" name=""></td>
+                            <td><input type="text" name=""></td>
+                        </tr>
+                        <tr>
+                            <th>VUOTI AL FORNO</th>
+                            <td><input type="checkbox" name=""></td>
+                            <td><input type="text" name=""></td>
+                        </tr>
+                    </table>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th colspan="4">PULIZIA CALAMITE</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><input type="text" name=""></td>
+                                <td><input type="text" name=""></td>
+                                <td><input type="text" name=""></td>
+                                <td><input type="text" name=""></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" name=""></td>
+                                <td><input type="text" name=""></td>
+                                <td><input type="text" name=""></td>
+                                <td><input type="text" name=""></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" name=""></td>
+                                <td><input type="text" name=""></td>
+                                <td><input type="text" name=""></td>
+                                <td><input type="text" name=""></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" name=""></td>
+                                <td><input type="text" name=""></td>
+                                <td><input type="text" name=""></td>
+                                <td><input type="text" name=""></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="left">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th colspan="5">PRELIEVO TERRA</th>
+                            </tr>
+                            <tr>
+                                <th></th>
+                                <th>MUGNAIO</th>
+                                <th>SILOS</th>
+                                <th>DATA</th>
+                                <th>UMIDITA'</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><input type="checkbox" name=""></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name=""></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name=""></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name=""></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name=""></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name=""></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name=""></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name=""></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name=""></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name=""></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name=""></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name=""></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <h2>Problemi Vari / Annotazioni</h2>
+            <textarea name="comunicazioni" cols="100" rows="4"></textarea>
         </div>
         <input type="hidden" name="reparto" value="presse">
         <input type="submit" name="save" id="save" value="Salva">
@@ -237,5 +443,4 @@
         }, 1000);
     </script>
 </body>
-
 </html>
