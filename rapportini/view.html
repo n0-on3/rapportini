@@ -80,7 +80,7 @@
                 padding: 3px 10px !important;
             }
             .secondascelta>tbody>tr>td:nth-child(1) {
-                width: 10%;
+                width: 15%;
             }
 
             .secondascelta>tbody>tr>td:nth-child(2) {
@@ -142,6 +142,7 @@
     <body>
         <h1>Visualizzazione Dati</h1>
         <form method="POST" id="filterForm">
+            <button id="indietro" type="button"><-</button>
             <p class="inline">Data: </p>
             <input type="date" name="date" id="date" pattern="\d{4}-\d{2}-\d{2}" placeholder="aaaa-mm-gg">
             <label for="reparto">Reparto: </label>
@@ -155,6 +156,7 @@
                 <option value="singola">Singola</option>
             </select>
             <input type="submit" name="filter" value="Filtra" id="filter">
+            <button id="avanti" type="button">-></button>
         </form>
         <div id="main">
             <p id="error" style="color: red;"></p>
@@ -504,6 +506,16 @@
                                         <td><input type="text" name="tono5" readonly></td>
                                         <td><input type="text" name="tono6" readonly></td>
                                         <td><input type="text" name="tono7" readonly></td>
+                                    </tr>
+                                    <tr>
+                                        <th>CALIBRO</th>
+                                        <td><input type="text" name="calibro1"></td>
+                                        <td><input type="text" name="calibro2"></td>
+                                        <td><input type="text" name="calibro3"></td>
+                                        <td><input type="text" name="calibro4"></td>
+                                        <td><input type="text" name="calibro5"></td>
+                                        <td><input type="text" name="calibro6"></td>
+                                        <td><input type="text" name="calibro7"></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -1076,6 +1088,22 @@
                     }
                 });
             }
+
+            document.getElementById('indietro').addEventListener('click', function(event){
+                var date = new Date(document.getElementById('date').value);
+                date.setDate(date.getDate() - 1);
+                console.log(date.toISOString().split('T')[0])
+                document.getElementById('date').value = date.toISOString().split('T')[0]
+                document.getElementById('filter').click()
+            })
+
+            document.getElementById('avanti').addEventListener('click', function(event){
+                var date = new Date(document.getElementById('date').value);
+                date.setDate(date.getDate() + 1);
+                console.log(date.toISOString().split('T')[0])
+                document.getElementById('date').value = date.toISOString().split('T')[0]
+                document.getElementById('filter').click()
+            })
 
             document.getElementById('filterForm').addEventListener('submit', function(event){
                 event.preventDefault();

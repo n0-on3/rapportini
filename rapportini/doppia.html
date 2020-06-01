@@ -35,7 +35,7 @@
         <!--HEADER-->
         <form method="POST" id="dataForm">
             <input size="40" name="NOME" placeholder="Inserisci il nome" required>
-            <input name="DATA" type="date" required>
+            <input name="DATA" type="date" required pattern="\d{4}-\d{2}-\d{2}" placeholder="aaaa-mm-gg">
             <select name="TURNO" id="turno" required>
                 <option value="M">Mattino</option>
                 <option value="P">Pomeriggio</option>
