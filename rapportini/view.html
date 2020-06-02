@@ -16,7 +16,7 @@
             .inline{
                 display: inline-block;
             }
-            #mulini, #scelta, #doppia, .singola, .doppia{
+            #mulini, #scelta, #doppia, #presse, .singola, .doppia{
                 display: none;
             }
             .tractive{
@@ -112,6 +112,39 @@
                 width: 80% !important;
                 margin: 30px auto;
             }
+            /* PRESSE */
+            #presse .table {
+                width: 60%;
+                border-collapse: collapse;
+                margin: 30px auto;
+            }
+
+            #presse .table input {
+                width: 100%;
+            }
+
+            #presse .small {
+                width: 40% !important;
+                margin: 30px auto;
+            }
+            #presse .container{
+                text-align: center;
+            }
+            #presse #center-container{
+                width: 60%;
+                margin: 0 auto;
+                display: flex;
+                flex: 1;
+            }
+            #presse #left, #presse #right{
+                width: 40%;
+                margin: 0 auto;
+                display: flex;
+                flex-direction: column;
+            }
+            #presse #right .table, #presse #left .table{
+                width: 100%;
+            }
             @media screen and (max-width: 1440px){
                 #scelta #left, #scelta #right{
                     width: 45%;
@@ -149,11 +182,12 @@
             <select name="reparto">
                 <option value="" selected></option>
                 <option value="mulini">Mulini</option>
-                <option value="sceltal1" readonly>Scelta L1</option>
+                <option value="sceltal1">Scelta L1</option>
                 <option value="sceltal2">Scelta L2</option>
                 <option value="sceltal3">Scelta L3</option>
                 <option value="doppia">Doppia</option>
                 <option value="singola">Singola</option>
+                <option value="presse">Presse</option>
             </select>
             <input type="submit" name="filter" value="Filtra" id="filter">
             <button id="avanti" type="button">-></button>
@@ -1046,6 +1080,321 @@
                 </div>
                 <!--FINE Container da copiare-->
             </div>
+            <div id="presse">
+                <div class="container">
+                    <h1 style="text-align: center;" class="displayTurno">MATTINO</h1>
+                    <p class="inline">Operaio: <strong class="operaio"></strong></p>
+                    <table class="table">
+                        <thead>
+                            <th></th>
+                            <th colspan="2">Porcellanato</th>
+                            <th colspan="2">PH2000 EX 30</th>
+                            <th colspan="2">PH2090 33 N</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>SPESSORE mm.</th>
+                                <td colspan="2"><input readonly type="text" name="spessore_porc"></td>
+                                <td colspan="2"><input readonly type="text" name="spessore_ph2000"></td>
+                                <td colspan="2"><input readonly type="text" name="spessore_ph2090"></td>
+                            </tr>
+                            <tr>
+                                <th>PULIZIA STAMPO ORE</th>
+                                <td><input readonly type="checkbox" name="puliziastampo_porc-check" onclick="return false"></td>
+                                <td><input readonly type="time" name="puliziastampo_porc-input" disabled></td>
+                                <td><input readonly type="checkbox" name="puliziastampo_ph2000-check" onclick="return false"></td>
+                                <td><input readonly type="time" name="puliziastampo_ph2000-input" disabled></td>
+                                <td><input readonly type="checkbox" name="puliziastampo_ph2090-check" onclick="return false"></td>
+                                <td><input readonly type="time" name="puliziastampo_ph2090-input" disabled></td>
+                            </tr>
+                            <tr>
+                                <th>PULIZIA GRIGLIA</th>
+                                <td><input readonly type="checkbox" name="puliziagriglia_porc-check" onclick="return false"></td>
+                                <td><input readonly type="time" name="puliziagriglia_porc-input" disabled></td>
+                                <td><input readonly type="checkbox" name="puliziagriglia_ph2000-check" onclick="return false"></td>
+                                <td><input readonly type="time" name="puliziagriglia_ph2000-input" disabled></td>
+                                <td><input readonly type="checkbox" name="puliziagriglia_ph2090-check" onclick="return false"></td>
+                                <td><input readonly type="time" name="puliziagriglia_ph2090-input" disabled></td>
+                            </tr>
+                            <tr>
+                                <th>2° PULIZIA STAMPO</th>
+                                <td><input readonly type="checkbox" name="puliziastampo2_porc-check" onclick="return false"></td>
+                                <td><input readonly type="time" name="puliziastampo2_porc-input" disabled></td>
+                                <td><input readonly type="checkbox" name="puliziastampo2_ph2000-check" onclick="return false" ></td>
+                                <td><input readonly type="time" name="puliziastampo2_ph2000-input" disabled></td>
+                                <td><input readonly type="checkbox" name="puliziastampo2_ph2090-check" onclick="return false"></td>
+                                <td><input readonly type="time" name="puliziastampo2_ph2090-input" disabled></td>
+                            </tr>
+                            <tr>
+                                <th>2° PULIZIA GRIGLIA</th>
+                                <td><input readonly type="checkbox" name="puliziagriglia2_porc-check" onclick="return false"></td>
+                                <td><input readonly type="time" name="puliziagriglia2_porc-input" disabled></td>
+                                <td><input readonly type="checkbox" name="puliziagriglia2_ph2000-check" onclick="return false"></td>
+                                <td><input readonly type="time" name="puliziagriglia2_ph2000-input" disabled></td>
+                                <td><input readonly type="checkbox" name="puliziagriglia2_ph2090-check" onclick="return false" ></td>
+                                <td><input readonly type="time" name="puliziagriglia2_ph2090-input" disabled></td>
+                            </tr>
+                            <tr>
+                                <th>CONTROLLO SOFFIETTO ORE</th>
+                                <td><input readonly type="checkbox" name="controllosoffiettoore_porc-check" onclick="return false"></td>
+                                <td><input readonly type="time" name="controllosoffiettoore_porc-input" disabled></td>
+                                <td><input readonly type="checkbox" name="controllosoffiettoore_ph2000-check"onclick="return false"></td>
+                                <td><input readonly type="time" name="controllosoffiettoore_ph2000-input" disabled></td>
+                                <td><input readonly type="checkbox" name="controllosoffiettoore_ph2090-check" onclick="return false"></td>
+                                <td><input readonly type="time" name="controllosoffiettoore_ph2090-input" disabled></td>
+                            </tr>
+                            <tr>
+                                <th>CONTROLLO CAVI RISCALDATI</th>
+                                <td><input readonly type="checkbox" name="controllocavirisc_porc-check" onclick="return false"></td>
+                                <td><input readonly type="text" name="controllocavirisc_porc-input" disabled></td>
+                                <td><input readonly type="checkbox" name="controllocavirisc_ph2000-check" onclick="return false"></td>
+                                <td><input readonly type="text" name="controllocavirisc_ph2000-input" disabled></td>
+                                <td><input readonly type="checkbox" name="controllocavirisc_ph2090-check" onclick="return false"></td>
+                                <td><input readonly type="text" name="controllocavirisc_ph2090-input" disabled></td>
+                            </tr>
+                            <tr>
+                                <th>SETACCINO SCARICA</th>
+                                <td><input readonly type="checkbox" name="setaccinoscarica_porc-check"></td>
+                                <td><input readonly type="text" name="setaccinoscarica_porc-input" disabled></td>
+                                <td><input readonly type="checkbox" name="setaccinoscarica_ph2000-check" onclick="return false"></td>
+                                <td><input readonly type="text" name="setaccinoscarica_ph2000-input" disabled></td>
+                                <td><input readonly type="checkbox" name="setaccinoscarica_ph2090-check" onclick="return false"></td>
+                                <td><input readonly type="text" name="setaccinoscarica_ph2090-input" disabled></td>
+                            </tr>
+                            <tr>
+                                <th>CONTROLLO RETE SETACCI</th>
+                                <td><input readonly type="checkbox" name="contretesetacci_porc-check"></td>
+                                <td><input readonly type="text" name="contretesetacci_porc-input" disabled></td>
+                                <td><input readonly type="checkbox" name="contretesetacci_ph2000-check" onclick="return false"></td>
+                                <td><input readonly type="text" name="contretesetacci_ph2000-input" disabled></td>
+                                <td><input readonly type="checkbox" name="contretesetacci_ph2090-check" onclick="return false"></td>
+                                <td><input readonly type="text" name="contretesetacci_ph2090-input" disabled></td>
+                            </tr>
+                            <tr>
+                                <th>VUOTATO TRAMOGGINO</th>
+                                <td><input readonly type="checkbox" name="vuotatotramoggino_porc-check"></td>
+                                <td><input readonly type="text" name="vuotatotramoggino_porc-input" disabled></td>
+                                <td><input readonly type="checkbox" name="vuotatotramoggino_ph2000-check" onclick="return false"></td>
+                                <td><input readonly type="text" name="vuotatotramoggino_ph2000-input" disabled></td>
+                                <td><input readonly type="checkbox" name="vuotatotramoggino_ph2090-check" onclick="return false"></td>
+                                <td><input readonly type="text" name="vuotatotramoggino_ph2090-input" disabled></td>
+                            </tr>
+                            <tr>
+                                <th>CAMBIO MARCHE</th>
+                                <td><input readonly type="checkbox" name="cambiomarche_porc-check"></td>
+                                <td><input readonly type="text" name="cambiomarche_porc-input" disabled placeholder="Serie marche montate"></td>
+                                <td><input readonly type="checkbox" name="cambiomarche_ph2000-check" onclick="return false"></td>
+                                <td><input readonly type="text" name="cambiomarche_ph2000-input" disabled placeholder="Serie marche montate"></td>
+                                <td><input readonly type="checkbox" name="cambiomarche_ph2090-check" onclick="return false"></td>
+                                <td><input readonly type="text" name="cambiomarche_ph2090-input" disabled placeholder="Serie marche montate"></td>
+                            </tr>
+                            <tr>
+                                <th>CAMBIO TAMPONI</th>
+                                <td><input readonly type="checkbox" name="cambiotamponi_porc-check"></td>
+                                <td><input readonly type="text" name="cambiotamponi_porc-input" disabled placeholder="Tipo di tampone montato"></td>
+                                <td><input readonly type="checkbox" name="cambiotamponi_ph2000-check" onclick="return false"></td>
+                                <td><input readonly type="text" name="cambiotamponi_ph2000-input" disabled placeholder="Tipo di tampone montato"></td>
+                                <td><input readonly type="checkbox" name="cambiotamponi_ph2090-check" onclick="return false"></td>
+                                <td><input readonly type="text" name="cambiotamponi_ph2090-input" disabled placeholder="Tipo di tampone montato"></td>
+                            </tr>
+                            <tr>
+                                <th>SECONDA PRESSATA bar</th>
+                                <td colspan="2"><input readonly type="text" name="sec-press-bar_porc"></td>
+                                <td colspan="2"><input readonly type="text" name="sec-press-bar_ph2000"></td>
+                                <td colspan="2"><input readonly type="text" name="sec-press-bar_ph2090"></td>
+                            </tr>
+                            <tr>
+                                <th>Temp. Bruciatore 1 BT11</th>
+                                <td colspan="2"><input readonly type="text" name="temp-bruc1-bt11_porc"></td>
+                                <td colspan="2"><input readonly type="text" name="temp-bruc1-bt11_ph2000"></td>
+                                <td colspan="2"><input readonly type="text" name="temp-bruc1-bt11_ph2090"></td>
+                            </tr>
+                            <tr>
+                                <th>Temp. Bruciatore 2 BT13</th>
+                                <td colspan="2"><input readonly type="text" name="temp-bruc2-bt13_porc"></td>
+                                <td colspan="2"><input readonly type="text" name="temp-bruc2-bt13_ph2000"></td>
+                                <td colspan="2"><input readonly type="text" name="temp-bruc2-bt13_ph2090"></td>
+                            </tr>
+                            <tr>
+                                <th>Temp. STABILIZZ. BT12</th>
+                                <td colspan="2"><input readonly type="text" name="temp-stabilizz-bt12_porc"></td>
+                                <td colspan="2"><input readonly type="text" name="temp-stabilizz-bt12_ph2000"></td>
+                                <td colspan="2"><input readonly type="text" name="temp-stabilizz-bt12_ph2090"></td>
+                            </tr>
+                            <tr>
+                                <th>Hz INVERTER CAMINO</th>
+                                <td colspan="2"><input readonly type="text" name="hzinverter-camino_porc"></td>
+                                <td colspan="2"><input readonly type="text" name="hzinverter-camino_ph2000"></td>
+                                <td colspan="2"><input readonly type="text" name="hzinverter-camino_ph2090"></td>
+                            </tr>
+                            <tr>
+                                <th>UMIDITA' RESIDUA</th>
+                                <td colspan="2"><input readonly type="text" name="umiditaresidua_porc"></td>
+                                <td colspan="2"><input readonly type="text" name="umiditaresidua_ph2000"></td>
+                                <td colspan="2"><input readonly type="text" name="umiditaresidua_ph2090"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div id="center-container">
+                        <div id="right">
+                            <table class="table">
+                                <tr>
+                                    <th>PULIZIE REPARTO</th>
+                                    <td><input readonly type="checkbox" name="puliziereparto-check" onclick="return false"></td>
+                                    <td><input readonly type="text" name="puliziereparto-input" disabled></td>
+                                </tr>
+                                <tr>
+                                    <th>LAVORI SETTIMANALI</th>
+                                    <td><input readonly type="checkbox" name="lavorisettimanali-check" onclick="return false"></td>
+                                    <td><input readonly type="text" name="lavorisettimanali-input" disabled></td>
+                                </tr>
+                                <tr>
+                                    <th>VUOTI AL FORNO</th>
+                                    <td><input readonly type="checkbox" name="vuotialforno-check" onclick="return false"></td>
+                                    <td><input readonly type="text" name="vuotialforno-input" disabled></td>
+                                </tr>
+                            </table>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th colspan="4">PULIZIA CALAMITE</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><input readonly type="text" name="calamite1"></td>
+                                        <td><input readonly type="text" name="calamite2"></td>
+                                        <td><input readonly type="text" name="calamite3"></td>
+                                        <td><input readonly type="text" name="calamite4"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input readonly type="text" name="calamite5"></td>
+                                        <td><input readonly type="text" name="calamite6"></td>
+                                        <td><input readonly type="text" name="calamite7"></td>
+                                        <td><input readonly type="text" name="calamite8"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input readonly type="text" name="calamite9"></td>
+                                        <td><input readonly type="text" name="calamite10"></td>
+                                        <td><input readonly type="text" name="calamite12"></td>
+                                        <td><input readonly type="text" name="calamite13"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input readonly type="text" name="calamite14"></td>
+                                        <td><input readonly type="text" name="calamite15"></td>
+                                        <td><input readonly type="text" name="calamite16"></td>
+                                        <td><input readonly type="text" name="calamite17"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div id="left">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th colspan="5">PRELIEVO TERRA</th>
+                                    </tr>
+                                    <tr>
+                                        <th></th>
+                                        <th>MUGNAIO</th>
+                                        <th>SILOS</th>
+                                        <th>DATA</th>
+                                        <th>UMIDITA'</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><input readonly type="checkbox" name="prelievo1-check" onclick="return false"></td>
+                                        <td><input readonly type="text" disabled name="prelievo1_mugnaio-input"></td>
+                                        <td><input readonly type="text" disabled name="prelievo1_silos-input"></td>
+                                        <td><input readonly type="text" disabled name="prelievo1_data-input"></td>
+                                        <td><input readonly type="text" disabled name="prelievo1_umidita-input"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input readonly type="checkbox" name="prelievo2-check" onclick="return false"></td>
+                                        <td><input readonly type="text" disabled name="prelievo2_mugnaio-input"></td>
+                                        <td><input readonly type="text" disabled name="prelievo2_silos-input"></td>
+                                        <td><input readonly type="text" disabled name="prelievo2_data-input"></td>
+                                        <td><input readonly type="text" disabled name="prelievo2_umidita-input"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input readonly type="checkbox" name="prelievo3-check" onclick="return false"></td>
+                                        <td><input readonly type="text" disabled name="prelievo3_mugnaio-input"></td>
+                                        <td><input readonly type="text" disabled name="prelievo3_silos-input"></td>
+                                        <td><input readonly type="text" disabled name="prelievo3_data-input"></td>
+                                        <td><input readonly type="text" disabled name="prelievo3_umidita-input"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input readonly type="checkbox" name="prelievo4-check" onclick="return false"></td>
+                                        <td><input readonly type="text" disabled name="prelievo4_mugnaio-input"></td>
+                                        <td><input readonly type="text" disabled name="prelievo4_silos-input"></td>
+                                        <td><input readonly type="text" disabled name="prelievo4_data-input"></td>
+                                        <td><input readonly type="text" disabled name="prelievo4_umidita-input"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input readonly type="checkbox" name="prelievo5-check" onclick="return false"></td>
+                                        <td><input readonly type="text" disabled name="prelievo5_mugnaio-input"></td>
+                                        <td><input readonly type="text" disabled name="prelievo5_silos-input"></td>
+                                        <td><input readonly type="text" disabled name="prelievo5_data-input"></td>
+                                        <td><input readonly type="text" disabled name="prelievo5_umidita-input"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input readonly type="checkbox" name="prelievo6-check" onclick="return false"></td>
+                                        <td><input readonly type="text" disabled name="prelievo6_mugnaio-input"></td>
+                                        <td><input readonly type="text" disabled name="prelievo6_silos-input"></td>
+                                        <td><input readonly type="text" disabled name="prelievo6_data-input"></td>
+                                        <td><input readonly type="text" disabled name="prelievo6_umidita-input"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input readonly type="checkbox" name="prelievo7-check" onclick="return false"></td>
+                                        <td><input readonly type="text" disabled name="prelievo7_mugnaio-input"></td>
+                                        <td><input readonly type="text" disabled name="prelievo7_silos-input"></td>
+                                        <td><input readonly type="text" disabled name="prelievo7_data-input"></td>
+                                        <td><input readonly type="text" disabled name="prelievo7_umidita-input"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input readonly type="checkbox" name="prelievo8-check" onclick="return false"></td>
+                                        <td><input readonly type="text" disabled name="prelievo8_mugnaio-input"></td>
+                                        <td><input readonly type="text" disabled name="prelievo8_silos-input"></td>
+                                        <td><input readonly type="text" disabled name="prelievo8_data-input"></td>
+                                        <td><input readonly type="text" disabled name="prelievo8_umidita-input"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input readonly type="checkbox" name="prelievo9-check" onclick="return false"></td>
+                                        <td><input readonly type="text" disabled name="prelievo9_mugnaio-input"></td>
+                                        <td><input readonly type="text" disabled name="prelievo9_silos-input"></td>
+                                        <td><input readonly type="text" disabled name="prelievo9_data-input"></td>
+                                        <td><input readonly type="text" disabled name="prelievo9_umidita-input"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input readonly type="checkbox" name="prelievoA-check" onclick="return false"></td>
+                                        <td><input readonly type="text" disabled name="prelievoA_mugnaio-input"></td>
+                                        <td><input readonly type="text" disabled name="prelievoA_silos-input"></td>
+                                        <td><input readonly type="text" disabled name="prelievoA_data-input"></td>
+                                        <td><input readonly type="text" disabled name="prelievoA_umidita-input"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input readonly type="checkbox" name="prelievoB-check" onclick="return false"></td>
+                                        <td><input readonly type="text" disabled name="prelievoB_mugnaio-input"></td>
+                                        <td><input readonly type="text" disabled name="prelievoB_silos-input"></td>
+                                        <td><input readonly type="text" disabled name="prelievoB_data-input"></td>
+                                        <td><input readonly type="text" disabled name="prelievoB_umidita-input"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input readonly type="checkbox" name="prelievoC-check" onclick="return false"></td>
+                                        <td><input readonly type="text" disabled name="prelievoC_mugnaio-input"></td>
+                                        <td><input readonly type="text" disabled name="prelievoC_silos-input"></td>
+                                        <td><input readonly type="text" disabled name="prelievoC_data-input"></td>
+                                        <td><input readonly type="text" disabled name="prelievoC_umidita-input"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <h2>Problemi Vari / Annotazioni</h2>
+                    <textarea name="comunicazioni" cols="100" rows="4"></textarea>
+                </div>
+            </div>
         </div>
         <script>
             function clearInput(div){
@@ -1092,7 +1441,6 @@
             document.getElementById('indietro').addEventListener('click', function(event){
                 var date = new Date(document.getElementById('date').value);
                 date.setDate(date.getDate() - 1);
-                console.log(date.toISOString().split('T')[0])
                 document.getElementById('date').value = date.toISOString().split('T')[0]
                 document.getElementById('filter').click()
             })
@@ -1100,7 +1448,6 @@
             document.getElementById('avanti').addEventListener('click', function(event){
                 var date = new Date(document.getElementById('date').value);
                 date.setDate(date.getDate() + 1);
-                console.log(date.toISOString().split('T')[0])
                 document.getElementById('date').value = date.toISOString().split('T')[0]
                 document.getElementById('filter').click()
             })
@@ -1130,8 +1477,10 @@
                             break;
                     }
                     var repartoDiv = 'doppia';
+                }else if(document.getElementsByName('reparto')[0].value == 'presse'){
+                    repartoDiv = "presse";
                 }else{
-                    repartoDiv = 'mulini';
+                    repartoDiv = "mulini";
                 }
                 var activeReparto = document.getElementsByClassName("active")[0].id;
                 if(repartoDiv != activeReparto && repartoChoosen != ""){
