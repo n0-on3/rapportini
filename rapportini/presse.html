@@ -398,7 +398,6 @@
                         var checkbox = document.getElementsByName(storageKeys[k])[0]
                         var name = checkbox.name.split('-')[0];
                         checkbox.checked = jsonPresseDati[storageKeys[k]];
-                        console.log(this)
                         if (checkbox.checked) {
                             for(var l = 0; l<document.querySelectorAll("[name^="+name+"][name$=-input]").length;l++){
                                 document.querySelectorAll("[name^="+name+"][name$=-input]")[l].removeAttribute("disabled");
@@ -421,13 +420,14 @@
             saveToLocalStorage();
         });
 
+        //da rifare
         var btnCheckUnlock = setInterval(function () {
             if (localStorage.presse) var turno = JSON.parse(localStorage.presse)['TURNO']
             if (turno) {
                 var date = new Date();
-                var timeHour = date.getHours();
+                var time = date.getHours();
                 var oraSbloccoBtn;
-                switch (turno) {
+                switch(turno){
                     case 'M':
                         oraSbloccoBtn = 11
                         break;
@@ -439,10 +439,11 @@
                         break
                     default:
                 }
-                if (timeHour >= oraSbloccoBtn) {
+                if (time >= oraSbloccoBtn) {
                     document.getElementById("fine-turno").removeAttribute("disabled")
                     document.getElementById("fine-turno").addEventListener("click", function () {
-                        localStorageDataSend('presse');//cambia per diversi rapportini
+                        if(confirm("Vuoi inserire il rapportino nel database?\nVa inserito solo a fine turno"))
+                            localStorageDataSend('presse');//cambia per diversi rapportini
                     });
                     clearInterval(btnCheckUnlock)
                 }

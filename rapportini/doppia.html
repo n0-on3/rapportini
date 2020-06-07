@@ -215,7 +215,7 @@
                 event.preventDefault();
                 saveToLocalStorage()
             });
-
+            //da rifare
             var btnCheckUnlock = setInterval(function(){
                 if(localStorage.doppia) var turno = JSON.parse(localStorage.doppia)['TURNO']
                 if(turno){
@@ -238,7 +238,8 @@
                     if(time >= oraSbloccoBtn){
                         document.getElementById("fine-turno").removeAttribute("disabled")
                         document.getElementById("fine-turno").addEventListener("click", function(){
-                            localStorageDataSend('doppia');
+                            if(confirm("Vuoi inserire il rapportino nel database?\nVa inserito solo a fine turno"))
+                                localStorageDataSend('doppia');
                         });
                         clearInterval(btnCheckUnlock)
                     }

@@ -533,6 +533,7 @@
                 saveToLocalStorage();
             });
 
+            //da rifare
             var btnCheckUnlock = setInterval(function(){
                 if(localStorage.sceltal3) var turno = JSON.parse(localStorage.sceltal3)['TURNO']
                 if(turno){
@@ -554,7 +555,8 @@
                     if(time >= oraSbloccoBtn){
                         document.getElementById("fine-turno").removeAttribute("disabled")
                         document.getElementById("fine-turno").addEventListener("click", function(){
-                            localStorageDataSend('sceltal3');
+                            if(confirm("Vuoi inserire il rapportino nel database?\nVa inserito solo a fine turno"))
+                                localStorageDataSend('sceltal3');
                         });
                         clearInterval(btnCheckUnlock)
                     }

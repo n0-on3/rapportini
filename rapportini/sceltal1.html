@@ -113,7 +113,7 @@
                             <td><input type="text" name="tono7"></td>
                         </tr>
                         <tr>
-                            <th>CALBIRO</th>
+                            <th>CALIBRO</th>
                             <td><input type="text" name="calibro1"></td>
                             <td><input type="text" name="calibro2"></td>
                             <td><input type="text" name="calibro3"></td>
@@ -558,28 +558,30 @@
             saveToLocalStorage();
         });
 
+        //da rifare
         var btnCheckUnlock = setInterval(function () {
             if (localStorage.sceltal1) var turno = JSON.parse(localStorage.sceltal1)['TURNO']
             if (turno) {
                 var date = new Date();
-                var timeHour = date.getHours();
+                var timeHour = date.getHours() + ":" + date.getMinutes();
                 var oraSbloccoBtn;
-                switch (turno) {
+                switch(turno){
                     case 'M':
-                        oraSbloccoBtn = 11
+                        oraSbloccoBtn = "11:30"
                         break;
                     case 'P':
-                        oraSbloccoBtn = 19
+                        oraSbloccoBtn = "19:30"
                         break;
                     case 'N':
-                        oraSbloccoBtn = 3
+                        oraSbloccoBtn = "3:30"
                         break
                     default:
                 }
                 if (timeHour >= oraSbloccoBtn) {
                     document.getElementById("fine-turno").removeAttribute("disabled")
                     document.getElementById("fine-turno").addEventListener("click", function () {
-                        localStorageDataSend('sceltal1');
+                        if(confirm("Vuoi inserire il rapportino nel database?\nVa inserito solo a fine turno"))
+                            localStorageDataSend('sceltal1');
                     });
                     clearInterval(btnCheckUnlock)
                 }

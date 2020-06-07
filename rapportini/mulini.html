@@ -376,6 +376,7 @@
          //l'ora viene visualizzata nel formato 24h.
 
          //upload dati tramite click button
+         //da rifare
         var btnCheckUnlock = setInterval(function(){
             if(localStorage.mulini) var turno = JSON.parse(localStorage.mulini)['TURNO']
             if(turno){
@@ -398,11 +399,10 @@
                if(time >= oraSbloccoBtn){
                     document.getElementById("fine-turno").removeAttribute("disabled")
                     document.getElementById("fine-turno").addEventListener("click", function(){
-                        localStorageDataSend('mulini');
+                        if(confirm("Vuoi inserire il rapportino nel database?\nVa inserito solo a fine turno"))
+                            ocalStorageDataSend('mulini');
                     });
                     clearInterval(btnCheckUnlock)
-                }else{
-                    document.getElementById("fine-turno").setAttribute("disabled", "disabled")
                 }
             }
         }, 1000);
