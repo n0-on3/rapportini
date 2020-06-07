@@ -425,17 +425,17 @@
             if (localStorage.presse) var turno = JSON.parse(localStorage.presse)['TURNO']
             if (turno) {
                 var date = new Date();
-                var time = date.getHours();
+                var time = date.getHours() + ":" + date.getMinutes();
                 var oraSbloccoBtn;
                 switch(turno){
                     case 'M':
-                        oraSbloccoBtn = 11
+                        oraSbloccoBtn = "11:30"
                         break;
                     case 'P':
-                        oraSbloccoBtn = 19
+                        oraSbloccoBtn = "19:30"
                         break;
                     case 'N':
-                        oraSbloccoBtn = 3
+                        oraSbloccoBtn = "3:30"
                         break
                     default:
                 }

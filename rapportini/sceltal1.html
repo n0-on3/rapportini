@@ -563,7 +563,7 @@
             if (localStorage.sceltal1) var turno = JSON.parse(localStorage.sceltal1)['TURNO']
             if (turno) {
                 var date = new Date();
-                var timeHour = date.getHours() + ":" + date.getMinutes();
+                var time = date.getHours() + ":" + date.getMinutes();
                 var oraSbloccoBtn;
                 switch(turno){
                     case 'M':
@@ -577,7 +577,7 @@
                         break
                     default:
                 }
-                if (timeHour >= oraSbloccoBtn) {
+                if (time >= oraSbloccoBtn) {
                     document.getElementById("fine-turno").removeAttribute("disabled")
                     document.getElementById("fine-turno").addEventListener("click", function () {
                         if(confirm("Vuoi inserire il rapportino nel database?\nVa inserito solo a fine turno"))
