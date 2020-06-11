@@ -400,7 +400,7 @@
                     document.getElementById("fine-turno").removeAttribute("disabled")
                     document.getElementById("fine-turno").addEventListener("click", function(){
                         if(confirm("Vuoi inserire il rapportino nel database?\nVa inserito solo a fine turno"))
-                            ocalStorageDataSend('mulini');
+                            localStorageDataSend('mulini');
                     });
                     clearInterval(btnCheckUnlock)
                 }
