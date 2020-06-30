@@ -1,9 +1,9 @@
 <?php
     $servername = 'localhost';
     $username = 'root';
-    $password = '';
+    $password = 'master';
     try{
-        $conn = new PDO("mysql:host=$servername;dbname=work", $username, $password);
+        $conn = new PDO("mysql:host=$servername;dbname=rapportini", $username, $password);
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }
     catch(PDOException $e){

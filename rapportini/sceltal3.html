@@ -532,7 +532,7 @@
                 event.preventDefault();
                 saveToLocalStorage();
             });
-            
+
             var btnCheckUnlock = setInterval(function(){
                 if(localStorage.sceltal3) var turno = JSON.parse(localStorage.sceltal3)['TURNO']
                 if(turno){
@@ -551,9 +551,7 @@
                             targetTime.setHours(3,30);
                             break
                     }
-                console.log(timeNowDate)
-                console.log(targetTime)
-                if(timeNowDate >= targetTime){
+                    if(timeNowDate >= targetTime){
                         document.getElementById("fine-turno").removeAttribute("disabled")
                         document.getElementById("fine-turno").addEventListener("click", function(){
                             if(confirm("Vuoi inserire il rapportino nel database?\nVa inserito solo a fine turno"))
